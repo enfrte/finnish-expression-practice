@@ -1,4 +1,4 @@
-// question data - will eventually com from database
+/*
 var serverData = {
   questions: [
     [
@@ -10,17 +10,31 @@ var serverData = {
       "I want a car", // source_translation
       "Minä haluan auton", // translated_answer (maybe change to accpeted answers)
     ],
-    [
-      "I want a house", // source_translation
-      "Minä haluan kodin", // translated_answer (maybe change to accpeted answers)
-    ],
     //...more question arrays
   ] 
 }
+*/
 
+// practice data comes from couchdb
+var url = 'http://localhost:5984/finnish/_design/practice/_view/questions';
+
+function fetchData() {
+  return new Promise(function(resolve, reject) {
+    fetch(url).then(function(response) {
+      return response.json()
+    }).then(function(json) {
+      resolve(json.rows[0].value);
+    });
+  });
+}
+
+var serverData = {}
 
 // words the user chooses from the staged area to make a sentence 
-function stagedWords() {
+async function stagedWords() {
+  var questionData = await fetchData();
+  serverData.questions = questionData;
+
   var tempWords = []; // holds a list off all the translated words used in the test
   
   // split each translation sentence by space and put it into an array
@@ -55,99 +69,108 @@ function stagedWords() {
     //console.log(serverData.questions[i][2]);
   }
 
+  return serverData;
 }
-stagedWords();
 
-var vm = new Vue({
-  el: '#instance',
-  computed: {
-    answer() {
-      return this.choices.join(' ');
-    },
-    question() {
-      if( this.questionNumber < serverData.questions.length ){
-        return serverData.questions[this.questionNumber][0];
-      } else {
-        // recall the final question in place, instead of removing it
-        return serverData.questions[serverData.questions.length - 1][0];
-      }
-    },
-    staged() {
-      if( this.questionNumber < serverData.questions.length ){
-        return serverData.questions[this.questionNumber][2];
-      } else {
-        // recall the final staged question in place, instead of removing it
-        return serverData.questions[serverData.questions.length - 1][2];
-      }
-    },
-    scorePercentage() {
-      if(this.questionNumber === 0) {
-        return 0; // cannot divide by zero!
-      }
-      else {
-        return Math.floor((this.score / this.questionNumber) * 100);
-      }
-    },
-    progressPercentage() {
-      return  Math.floor(((this.questionNumber) / (serverData.questions.length)) * 100);
-    },
-    currentQuestionNumber() {
-      if( this.questionNumber < serverData.questions.length ){
-        return this.questionNumber + 1;
-      } else {
-        return this.questionNumber;
-      }
-    },
-
-  },
-  data: {
-    questionNumber: 0,
-    score: 0,
-    choices: [],
-    numberOfQuestions: serverData.questions.length,
-    showModal: false,
-  },
-  methods: {
-    choose(text) {
-      this.staged.splice(this.staged.indexOf(text), 1)
-      this.choices.push(text)
-    },
-    remove(text) {
-      this.choices.splice(this.choices.indexOf(text), 1)
-      this.staged.push(text)
-    },
-    checkAnswer(){
-      if( this.questionNumber < serverData.questions.length ){
-        if(this.answer === serverData.questions[this.questionNumber][1]){
-          console.log(this.questionNumber + " is correct");
-          this.score++;
+async function init(){
+  serverData = await stagedWords();
+    
+  var vm = new Vue({
+    el: '#instance',
+    computed: {
+      answer() {
+        return this.choices.join(' ');
+      },
+      question() {
+        if( this.questionNumber < serverData.questions.length ){
+          return serverData.questions[this.questionNumber][0];
+        } else {
+          // recall the final question in place, instead of removing it
+          return serverData.questions[serverData.questions.length - 1][0];
+        }
+      },
+      staged() {
+        if( this.questionNumber < serverData.questions.length ){
+          return serverData.questions[this.questionNumber][2];
+        } else {
+          // recall the final staged question in place, instead of removing it
+          return serverData.questions[serverData.questions.length - 1][2];
+        }
+      },
+      scorePercentage() {
+        if(this.questionNumber === 0) {
+          return 0; // cannot divide by zero!
         }
         else {
-          console.log(this.questionNumber + " is wrong");
+          return Math.floor((this.score / this.questionNumber) * 100);
         }
-        this.questionNumber++;
+      },
+      progressPercentage() {
+        return  Math.floor(((this.questionNumber) / (serverData.questions.length)) * 100);
+      },
+      currentQuestionNumber() {
         if( this.questionNumber < serverData.questions.length ){
-          // this conditional keeps the final answer in view instead of removing it
-          this.choices = [];
-          console.log('foo ' + this.questionNumber + ' / ' + serverData.questions.length);
+          return this.questionNumber + 1;
+        } else {
+          return this.questionNumber;
         }
-      }
-      
-      // end of test modal popup
-      if (this.questionNumber === serverData.questions.length) {
-        setTimeout(function(){
-          vm.showModal = true; // display game over popup
-        }, 1000);
-      }
-    },
-    redirectBack(){
-      // return the user to the previous page - called with button event
-      //window.location.replace("<?php echo $_SERVER['HTTP_REFERER']; ?>");
-      location.reload(); // replace this when there is a test selection
-    },
-  }
-});
+      },
 
+    },
+    data: {
+      questionNumber: 0,
+      score: 0,
+      choices: [],
+      numberOfQuestions: serverData.questions.length,
+      showModal: false,
+    },
+    methods: {
+      choose(text) {
+        this.staged.splice(this.staged.indexOf(text), 1)
+        this.choices.push(text)
+      },
+      remove(text) {
+        this.choices.splice(this.choices.indexOf(text), 1)
+        this.staged.push(text)
+      },
+      checkAnswer(){
+        if( this.questionNumber < serverData.questions.length ){
+          if(this.answer === serverData.questions[this.questionNumber][1]){
+            console.log(this.questionNumber + " is correct");
+            this.score++;
+          }
+          else {
+            console.log(this.questionNumber + " is wrong");
+          }
+          this.questionNumber++;
+          if( this.questionNumber < serverData.questions.length ){
+            // this conditional keeps the final answer in view instead of removing it
+            this.choices = [];
+            console.log('foo ' + this.questionNumber + ' / ' + serverData.questions.length);
+          }
+        }
+        
+        // end of test modal popup
+        if (this.questionNumber === serverData.questions.length) {
+          setTimeout(function(){
+            vm.showModal = true; // display game over popup
+          }, 1000);
+        }
+      },
+      redirectBack(){
+        // return the user to the previous page - called with button event
+        //window.location.replace("<?php echo $_SERVER['HTTP_REFERER']; ?>");
+        location.reload(); // replace this when there is a test selection
+      },
+    }
+  });
+
+  // gameover popup
+  Vue.component('modal', {
+    template: '#modal-template'
+  })
+
+}
 
 function verticallyCenterArea(){
   var instanceHeight = document.getElementById('instance').clientHeight + 100; 
@@ -160,7 +183,4 @@ function verticallyCenterArea(){
 
 window.onload = window.onresize = verticallyCenterArea;
 
-// gameover popup
-Vue.component('modal', {
-  template: '#modal-template'
-})
+init();
