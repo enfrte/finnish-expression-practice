@@ -28,27 +28,30 @@ function stagedWords() {
     var splitTranslation = serverData.questions[i][1].split(" ");
     // create the staged answer words from the splitTranslation. These are the individual words the user can select from
     serverData.questions[i].push(splitTranslation); // appends another array to each iteration
-    // prepare random words to pad staged answer words
-    tempWords = tempWords.concat(splitTranslation);
+    // prepare random words to pad staged answer words 
+    splitTranslation.forEach(function (item) {
+      if (tempWords.indexOf(item) === -1) {
+        tempWords.push(item);
+      }
+    });
   }
-  var distinctTempWords = [...new Set(tempWords)]; // strip out duplicates
 
   // repeat the serverData.questions iteration but this time add the extra words to the staged answer words
   for (var i = 0; i < serverData.questions.length; i++) {
-    // subrtract staged answer words from distinctTempWords, then shuffle and get two 
+    // subrtract staged answer words from tempWords, then shuffle and get two 
     var stagedWords = serverData.questions[i][2];
-    var difference = distinctTempWords.filter(function(x) { return !stagedWords.includes(x) }); // compare arrays - only use different words
-    var shuffledDistinctTempWords = function (arr) {
+    var difference = tempWords.filter(function(x) { return !stagedWords.includes(x) }); // compare arrays - only use different words
+    var shuffledTempWords = function (arr) {
       for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
       }
       return arr;
     }
-    var randomWords = shuffledDistinctTempWords(difference).slice(0, 2);
+    var randomWords = shuffledTempWords(difference).slice(0, 2);
     stagedWords = stagedWords.concat(randomWords); // add the random words to the staged answer words
     // replace original staged answer words
-    serverData.questions[i][2] = shuffledDistinctTempWords(stagedWords);
+    serverData.questions[i][2] = shuffledTempWords(stagedWords);
     //console.log(serverData.questions[i][2]);
   }
 
