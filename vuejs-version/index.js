@@ -16,8 +16,10 @@ var serverData = {
 */
 
 // practice data comes from couchdb
-var url = 'http://localhost:5984/finnish/_design/practice/_view/questions';
+var key = 'verb-chains'; // key of the database doc to select the specific chapter 
+var url = 'http://localhost:5984/finnish/_design/practice/_view/questions?key="'+ key +'"'; 
 
+/*
 function fetchData() {
   return new Promise(function(resolve, reject) {
     fetch(url).then(function(response) {
@@ -26,15 +28,20 @@ function fetchData() {
       resolve(json.rows[0].value);
     });
   });
+}*/
+async function fetchData() {
+  const response = await fetch(url);
+  const json = await response.json();
+  console.log(json.rows[0].value);
+  return json.rows[0].value;
 }
 
-var serverData = {}
+var serverData = {} 
 
 // words the user chooses from the staged area to make a sentence 
 async function stagedWords() {
-  var questionData = await fetchData();
-  serverData.questions = questionData;
-
+  serverData.questions = await fetchData(); 
+  
   var tempWords = []; // holds a list off all the translated words used in the test
   
   // split each translation sentence by space and put it into an array
@@ -56,7 +63,7 @@ async function stagedWords() {
     var stagedWords = serverData.questions[i][2];
     var difference = tempWords.filter(function(x) { return !stagedWords.includes(x) }); // compare arrays - only use different words
     var shuffledTempWords = function (arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
+      for (var i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
       }
