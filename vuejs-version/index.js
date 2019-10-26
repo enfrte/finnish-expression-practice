@@ -17,7 +17,7 @@ var serverData = {
 
 // practice data comes from couchdb
 var key = 'verb-chains'; // key of the database doc to select the specific chapter 
-var url = 'http://localhost:5984/finnish/_design/practice/_view/questions?key="'+ key +'"'; 
+var url = 'http://localhost:5984/finnish/_design/practice/_view/questions?key="'+ key +'"'; // request to couchDB
 
 /*
 function fetchData() {
