@@ -6,7 +6,7 @@ let Test = require('../models/test.model');
 router.route('/').get((req, res) => {
   Test.find()
     .then(dbData => res.json(dbData))
-    .catch(err => res.status(400).json('Error: ', err));
+    .catch(err => res.status(400).json(err));
 });
 
 router.route('/:id').get((req, res) => {
@@ -16,7 +16,7 @@ router.route('/:id').get((req, res) => {
       res.json(dbData);
       console.log('Result:', dbData); // returns null if not found
     })
-    .catch(err => res.status(400).json('Error: ', err));
+    .catch(err => res.status(400).json(err));
 });
 
 router.route('/:id').delete((req, res) => {
@@ -26,7 +26,7 @@ router.route('/:id').delete((req, res) => {
       res.json(dbData);
       console.log('Deleted:', dbData);
     })
-    .catch(err => res.status(400).json('Error: ', err));
+    .catch(err => res.status(400).json(err));
 });
 
 router.route('/').post((req, res) => {
@@ -41,11 +41,11 @@ router.route('/').post((req, res) => {
 
   newTest.save()
     .then((json) => res.json(json))
-    .catch(err => res.status(400).json('Error: ', err));
+    .catch(err => res.status(400).json(err));
 });
 
 // this is really a PUT request (update)
-router.route('/:id').post((req, res) => {
+router.route('/:id').put((req, res) => {
   console.log('Searching:', req.params.id);
   Test.findById(req.params.id)
     .then(dbData => {
@@ -58,9 +58,9 @@ router.route('/:id').post((req, res) => {
           res.json(json);
           console.log('Updated:', json);
         })
-        .catch(err => res.status(400).json('Error: ', err));
+        .catch(err => res.status(400).json(err));
     })
-    .catch(err => res.status(400).json('Error: ', err));
+    .catch(err => res.status(400).json(err));
 });
 
 module.exports = router;
