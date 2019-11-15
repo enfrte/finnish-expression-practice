@@ -23,7 +23,6 @@ const lessonSchema = new Schema({
   lang: {
     type: String,
     required: true,
-    unique: true
   },
   inProduction: {
     type: Boolean,
