@@ -12,7 +12,8 @@ const PracticeContextProvider = (props) => {
   const [modules, setModules] = useState([]); // here default value of modules = []
   const [activeModule, setActiveModule] = useState(null); // here default value of activeModule = null
   const [selectedPractice, setSelectedPractice] = useState();
-
+  const [questionIndex, setQuestionIndex] = useState(0); 
+  const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); 
 
   // activeModule = whatever the user selected from the menu. default = null
 
@@ -37,17 +38,37 @@ const PracticeContextProvider = (props) => {
   }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
 
   useEffect(() => {
-    //console.log('activeModule triggered useEffect', activeModule);
-
+    // should fire when a module is selected 
+    console.log('activeModule:', activeModule);
+    setQuestionIndex(0); // new module selected reset question count
+    setSelectedPracticeEnd(false);
   }, [activeModule]);
 
   useEffect(() => {
-    //console.log('selectedPractice triggered useEffect', selectedPractice);
-
+    console.log('selectedPractice:', selectedPractice);
   }, [selectedPractice]);
 
+  useEffect(() => {
+    console.log('Context questionIndex:', questionIndex);
+
+    if (selectedPractice === undefined) {
+      return;
+    }
+    // check for last question of practice
+    if (selectedPractice.questions.length === questionIndex + 1) {
+      setSelectedPracticeEnd(true);
+    }
+
+  }, [questionIndex]);
+
   return (
-    <PracticeContext.Provider value={{ modules, activeModule, setActiveModule, selectedPractice, setSelectedPractice }}>
+    <PracticeContext.Provider value={{ 
+      modules, 
+      activeModule, setActiveModule, 
+      selectedPractice, setSelectedPractice, 
+      questionIndex, setQuestionIndex,
+      selectedPracticeEnd
+    }}>
       { props.children }
     </PracticeContext.Provider>
   );

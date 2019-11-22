@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
 import ModuleDetails from './ModuleDetails';
 
 // Module list/menu - Return visible (in production) modules.  
 const ModuleList = () => {
   const { modules } = useContext(PracticeContext);
+
+  useEffect(() => {
+    // 
+  }, [modules]);
 
   return modules.length ? (
     <div>{
@@ -15,6 +19,7 @@ const ModuleList = () => {
             <ModuleDetails module={ module } key={ module._id }></ModuleDetails>
           )
         }
+        return null; // removes warning about map not returning something
       })
     }</div>
   ) : (

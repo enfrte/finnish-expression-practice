@@ -12,7 +12,7 @@ const { setActiveModule } = useContext(PracticeContext);
 
   return (
     <div className="module-practice-link-container">
-      <a onClick={selectModule} data-moduleid={module._id}>{ module.title }</a>
+      <button onClick={selectModule} data-moduleid={module._id}>{ module.title }</button>
     </div>
   );
 }
