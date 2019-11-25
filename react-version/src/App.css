@@ -17,6 +17,13 @@ body {
   box-sizing: inherit;
 }
 
+.display-block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
 
 img {
   /* flags */

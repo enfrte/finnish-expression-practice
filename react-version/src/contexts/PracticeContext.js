@@ -9,12 +9,14 @@ const PracticeContextProvider = (props) => {
   // Hooks useState return [value, function] via array destructuring.
   // Hooks example - const [count, setCount] = useState(0); // count = 0
   // A hooks function is triggered by events in the form of onClick={() => setCount(prevCount => prevCount + 1)} // or call the function from outside 
-  const [modules, setModules] = useState([]); // here default value of modules = []
-  const [activeModule, setActiveModule] = useState(null); // here default value of activeModule = null
-  const [selectedPractice, setSelectedPractice] = useState();
-  const [questionIndex, setQuestionIndex] = useState(0); 
-  const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); 
+  const [modules, setModules] = useState([]); // container to hold all the practice modules 
+  const [activeModule, setActiveModule] = useState(null); // module id of current selected practice module
+  const [selectedPractice, setSelectedPractice] = useState(); // module data selected by the user to practice
+  const [questionIndex, setQuestionIndex] = useState(0); // the current question in the module practice
+  const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); // indicates the practice has finished (when the user reaches the last question in the practice)
+  const [showModuleFinished, setShowModuleFinished] = useState(false);
 
+  
   // activeModule = whatever the user selected from the menu. default = null
 
   // The useEffect hook replaces lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
@@ -32,7 +34,7 @@ const PracticeContextProvider = (props) => {
       } 
       catch (error) {
         console.log('Fetch', error);
-      }      
+      }
     }
     getModules();
   }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
@@ -40,8 +42,6 @@ const PracticeContextProvider = (props) => {
   useEffect(() => {
     // should fire when a module is selected 
     console.log('activeModule:', activeModule);
-    setQuestionIndex(0); // new module selected reset question count
-    setSelectedPracticeEnd(false);
   }, [activeModule]);
 
   useEffect(() => {
@@ -67,7 +67,8 @@ const PracticeContextProvider = (props) => {
       activeModule, setActiveModule, 
       selectedPractice, setSelectedPractice, 
       questionIndex, setQuestionIndex,
-      selectedPracticeEnd
+      selectedPracticeEnd, setSelectedPracticeEnd,
+      showModuleFinished, setShowModuleFinished
     }}>
       { props.children }
     </PracticeContext.Provider>
