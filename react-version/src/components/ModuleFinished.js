@@ -11,18 +11,15 @@
       const { setQuestionIndex } = useContext(PracticeContext);
       const { setSelectedPracticeEnd } = useContext(PracticeContext);
 
-      const [showHide, setShowHide] = useState('hidden');
-
       useEffect(() => {
         if (showModuleFinished) {
           // show the modal popup
-          setShowHide('display-block'); 
+          setShowModuleFinished(true); 
         }
-      }, [showModuleFinished]);
+      }, [setShowModuleFinished, showModuleFinished]);
 
       function closeModule() {
         // close the modal popup
-        setShowHide('hidden'); 
         // reset the exercises
         setQuestionIndex(0); 
         setSelectedPracticeEnd(false);
@@ -30,7 +27,7 @@
       }
 
       return (
-        <div className={`module-finished-container ${showHide}`}>
+        <div className={`module-finished-container ${showModuleFinished ? 'display-block' : 'hidden'}`}>
           <h3>You have completed { selectedPractice.title }</h3>
           <p>Show some stats here...</p>
           <button onClick={closeModule}>Back to exercises</button>
