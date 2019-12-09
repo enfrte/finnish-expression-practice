@@ -45,7 +45,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
   }, [shuffledWords, answerArray]);
 
   return (
-    <div className="w3-container module-practice-answer-area">
+    <div className="module-practice-answer-area">
       <div id="answerArea" className="text-area">
       <p>
         {/* the user's answer goes here */}

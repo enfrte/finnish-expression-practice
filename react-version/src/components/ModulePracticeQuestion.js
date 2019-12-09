@@ -7,7 +7,7 @@ const ModulePracticeQuestion = ( {module, questionNumber} ) => {
   
 
   return (
-    <div className="w3-container module-practice-question">
+    <div className="module-practice-question">
       {/* questionNumber.questionIndex increments and next question is selected from questions index */}
       <h3>Q: {module.questions[questionNumber].foreignLang[0]}</h3>
     </div>

@@ -8,8 +8,8 @@ body {
   margin: 0;
   padding-bottom: 2rem;
   min-height: 100%;
+  font-family: 'Varela Round', sans-serif;
 }
-
 
 *,
 *:before,
@@ -26,16 +26,28 @@ body {
 }
 
 img {
-  /* flags */
   max-width: 100%;
 }
 
-.container {
-  margin: 15px auto;
+button {
+  font-family : inherit; /* Needed for buttons to use the specified font family */
+  font-size: 1em;
+}
+
+.module-practice-answer-result {
+  padding: 10px;
+}
+
+.module-practice-container {
+  margin: auto;
   max-width: 600px;
 }
 
-h3, h4 { color:#333333; margin: 10px 0; }
+h3, h4 { 
+  color:#333333; 
+  margin: 10px 0; 
+  font-weight: bold;
+}
 
 blockquote {
   background: #eee;
@@ -70,13 +82,14 @@ blockquote p {
 }
 
 .question-progressbar {
-  background-color:	#7CFC00;
-  height:100%;
-  display: inline-block;
+  background-color:rgb(99, 217, 104);
+  height: 20px;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
 #instance {
-  font-family: sans-serif;
   text-align: center;
 }
 

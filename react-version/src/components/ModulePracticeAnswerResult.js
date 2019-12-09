@@ -7,7 +7,8 @@ import ModuleFinished from './ModuleFinished';
 const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
   const { setShowModuleFinished } = useContext(PracticeContext);
   const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
-  const { selectedPracticeEnd } = useContext(PracticeContext);
+  const { selectedPractice, selectedPracticeEnd } = useContext(PracticeContext);
+  const { progressPercent, setProgressPercent } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
@@ -21,8 +22,12 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
   // navigate to the next question
   function progress(e) {
     e.preventDefault();
+    
     if (checkAnswer === false) {
       setCheckAnswer(true);
+      // set the progress percent
+      const percent = ((questionIndex + 1) / selectedPractice.questions.length) * 100;
+      setProgressPercent(percent);
       return; 
     }
     if (selectedPracticeEnd === true) {
@@ -58,7 +63,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
         <button 
           style={attempt.length < 1 ? {} : {color: 'white', background: '#4CAF50'}} 
           className={ checkAnswer === false ? 'answer-button answer-button-default' : 'answer-button answer-button-continue' } 
-          onClick={progress} disabled={attempt.length < 1 ? 'disabled' : ''}>Check Answer</button>
+          onClick={progress} disabled={attempt.length < 1 ? 'disabled' : ''}>CHECK</button>
       </div>
     );
   }
@@ -70,7 +75,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
           <button 
             style={ answer === attempt ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } } 
             className="answer-button"
-            onClick={ progress }>Continue
+            onClick={ progress }>CONTINUE
           </button>
 
           <div className="result-info-container">

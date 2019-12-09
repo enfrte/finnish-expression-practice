@@ -10,6 +10,7 @@
       const { showModuleFinished, setShowModuleFinished } = useContext(PracticeContext);
       const { setQuestionIndex } = useContext(PracticeContext);
       const { setSelectedPracticeEnd } = useContext(PracticeContext);
+      const { setProgressPercent } = useContext(PracticeContext);
 
       useEffect(() => {
         if (showModuleFinished) {
@@ -24,13 +25,14 @@
         setQuestionIndex(0); 
         setSelectedPracticeEnd(false);
         setShowModuleFinished(false);
+        setProgressPercent(0);
       }
 
       return (
         <div className={`module-finished-container ${showModuleFinished ? 'display-block' : 'hidden'}`}>
           <h3>You have completed { selectedPractice.title }</h3>
           <p>Show some stats here...</p>
-          <button onClick={closeModule}>Back to exercises</button>
+          <button onClick={closeModule}>BACK TO EXERCISES</button>
         </div>
       );
     }

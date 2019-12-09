@@ -15,6 +15,7 @@ const PracticeContextProvider = (props) => {
   const [questionIndex, setQuestionIndex] = useState(0); // the current question in the module practice
   const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); // indicates the practice has finished (when the user reaches the last question in the practice)
   const [showModuleFinished, setShowModuleFinished] = useState(false);
+  const [progressPercent, setProgressPercent] = useState(0);
 
   
   // activeModule = whatever the user selected from the menu. default = null
@@ -45,11 +46,8 @@ const PracticeContextProvider = (props) => {
   }, [activeModule]);
 
   useEffect(() => {
-    console.log('selectedPractice:', selectedPractice);
-  }, [selectedPractice]);
-
-  useEffect(() => {
-    console.log('Context questionIndex:', questionIndex);
+    //console.log('selectedPractice:', selectedPractice);
+    //console.log('Context questionIndex:', questionIndex);
 
     if (selectedPractice === undefined) {
       return;
@@ -59,7 +57,7 @@ const PracticeContextProvider = (props) => {
       setSelectedPracticeEnd(true);
     }
 
-  }, [questionIndex]);
+  }, [questionIndex, selectedPractice]);
 
   return (
     <PracticeContext.Provider value={{ 
@@ -68,7 +66,8 @@ const PracticeContextProvider = (props) => {
       selectedPractice, setSelectedPractice, 
       questionIndex, setQuestionIndex,
       selectedPracticeEnd, setSelectedPracticeEnd,
-      showModuleFinished, setShowModuleFinished
+      showModuleFinished, setShowModuleFinished,
+      progressPercent, setProgressPercent
     }}>
       { props.children }
     </PracticeContext.Provider>

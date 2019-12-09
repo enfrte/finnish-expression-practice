@@ -29,7 +29,7 @@ const ModulePractice = () => {
 
   // output the user selected module
   return (
-    <div className="w3-container module-practice">
+    <div className="module-practice-container">
     {/*selectedPractice ? <p>{selectedPractice.title}</p> : <h3>Please select a module from the menu.</h3>*/}
       {
         selectedPractice ? 
