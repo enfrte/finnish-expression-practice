@@ -17,7 +17,7 @@ const PracticeContextProvider = (props) => {
   const [showModuleFinished, setShowModuleFinished] = useState(false); // show / hide the module modal
   const [showModuleMenu, setShowModuleMenu] = useState(true); // show / hide the module menu 
   const [progressPercent, setProgressPercent] = useState(0);
-
+  const [showPracticeTutorial, setShowPracticeTutorial] = useState(false);
 
   // The useEffect hook replaces lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   // Use useEffect when reaching outside of the component to do something (a side effect).
@@ -64,7 +64,8 @@ const PracticeContextProvider = (props) => {
       selectedPracticeEnd, setSelectedPracticeEnd,
       showModuleFinished, setShowModuleFinished,
       progressPercent, setProgressPercent,
-      showModuleMenu, setShowModuleMenu
+      showModuleMenu, setShowModuleMenu,
+      showPracticeTutorial, setShowPracticeTutorial
     }}>
       { props.children }
     </PracticeContext.Provider>

@@ -43,6 +43,30 @@ body {
   background-color: white;
 }
 
+.module-practice-tutorial-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  min-height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+}
+
+.module-practice-tutorial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.module-practice-tutorial-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .display-block {
   display: flex;
 }
@@ -214,6 +238,12 @@ button:focus { outline:0; }
 .answer-button-continue {
   color: white;
   background: #4CAF50;
+  letter-spacing: 1px;
+}
+
+.tutorial-button {
+  color: white;
+  background: #333;
   letter-spacing: 1px;
 }
 

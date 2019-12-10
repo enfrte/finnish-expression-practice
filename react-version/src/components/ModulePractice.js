@@ -3,6 +3,7 @@ import { PracticeContext } from '../contexts/PracticeContext';
 import ModulePracticeAnswerArea from './ModulePracticeAnswerArea';
 import ModulePracticeQuestion from './ModulePracticeQuestion';
 import ModulePracticeProgress from './ModulePracticeProgress';
+import ModulePracticeTutorial from './ModulePracticeTutorial';
 
 // have access to the modules
 // have access to user selected module item
@@ -33,6 +34,7 @@ const ModulePractice = () => {
       {
         selectedPractice ? 
           <React.Fragment>
+          <ModulePracticeTutorial module={ selectedPractice } /> 
             <ModulePracticeProgress questionNumber={ questionIndex } /> 
             <ModulePracticeQuestion module={ selectedPractice } questionNumber={ questionIndex } /> 
             <ModulePracticeAnswerArea module={ selectedPractice } questionNumber={ questionIndex } /> 
