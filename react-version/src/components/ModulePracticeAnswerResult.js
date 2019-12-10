@@ -4,7 +4,7 @@ import { PracticeContext } from '../contexts/PracticeContext';
 import ModuleFinished from './ModuleFinished';
 
 // Enables the user to check their answer, shows the result, and provides an element to proceed to the next question
-const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
+const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt} ) => {
   const { setShowModuleFinished } = useContext(PracticeContext);
   const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
   const { selectedPractice, selectedPracticeEnd } = useContext(PracticeContext);
@@ -16,9 +16,17 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
 
   // this may need to change in future depending on whether user might be typing answers. 
   // See also localeCompare(), but I was having issues with that with Finnish öä characters 
-  const checkAnwserText = (answer, attempt) => {
+  const checkAnwserText = (answers, attempt) => {
+    console.log('answers',answers);
+    console.log('attempt',attempt);
+    
+    const correctAnswer = answers.some((answer) => { // The some() method checks if some array values pass a test
+      return answer.toUpperCase() === attempt.toUpperCase()     
+    });
+
+    return correctAnswer; 
     // takes care of any calpitalisation false negatives entered in the database
-    return answer.toUpperCase() === attempt.toUpperCase() ? true : false;
+    //return answer.toUpperCase() === attempt.toUpperCase() ? true : false;
   };
 
   // create the user selected module for practice
@@ -52,7 +60,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
     // when check answer button has been pressed, its state changes to false until the continue button is pressed
     if (checkAnswer === true) {
       // display the result of the answer
-      if (checkAnwserText(answer, attempt)) {
+      if (checkAnwserText(answers, attempt)) {
         setResultMessage('Correct');
         setResultAnswer('');
         return;
@@ -60,7 +68,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
       setResultMessage('Incorrect');
       setResultAnswer(answer);
     }
-  }, [checkAnswer, answer, attempt]);
+  }, [checkAnswer, answer, answers, attempt]);
 
   if ( checkAnswer === false ) {
     return (
@@ -75,18 +83,18 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
   else {
     return (
       <div className="module-practice-answer-result-area">
-        <div style={ checkAnwserText(answer, attempt) ? { backgroundColor: 'rgb(99, 217, 104)', color: 'rgb(48, 113, 51)' } : { backgroundColor: 'rgb(255, 160, 176)', color: 'rgb(196, 0, 33)' } } className="module-practice-answer-result">
+        <div style={ checkAnwserText(answers, attempt) ? { backgroundColor: 'rgb(99, 217, 104)', color: 'rgb(48, 113, 51)' } : { backgroundColor: 'rgb(255, 160, 176)', color: 'rgb(196, 0, 33)' } } className="module-practice-answer-result">
 
           <button 
-            style={ checkAnwserText(answer, attempt) ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } }
+            style={ checkAnwserText(answers, attempt) ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } }
             className="answer-button"
             onClick={ progress }>CONTINUE
           </button>
 
           <div className="result-info-container">
             <div className="result-info">
-              <h3 style={ checkAnwserText(answer, attempt) ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h3>
-              <p>{ checkAnwserText(answer, attempt) ? '' : <strong>Answer: </strong> } { resultAnswer.charAt(0).toUpperCase() + resultAnswer.slice(1) }</p>
+              <h3 style={ checkAnwserText(answers, attempt) ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h3>
+              <p>{ checkAnwserText(answers, attempt) ? '' : <strong>Answer: </strong> } { resultAnswer.charAt(0).toUpperCase() + resultAnswer.slice(1) }</p>
             </div>
           </div>
 

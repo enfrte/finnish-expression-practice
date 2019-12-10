@@ -5,8 +5,9 @@ import ModulePracticeAnswerResult from './ModulePracticeAnswerResult';
 const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
   const [shuffledWords, setShuffledWords] = useState([]);
   const [answerArray, setAnswerArray] = useState([]);
-  const [sentence, setSentence] = useState(''); // the current nativeLang sentence
-
+  const [sentence, setSentence] = useState(''); // the current nativeLang sentence shown to the user
+  const [answers, setAnswers] = useState(''); // all possible answers (the answer can be phrased differently and have same meaning)
+  
   let shuffleWords = (array) => {
     array.forEach((value, index) => {
       const j = Math.floor(Math.random() * (index + 1));
@@ -18,9 +19,10 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
   useEffect(() => {
     setAnswerArray([]); // disgard the previous question's answer
     setSentence(module.questions[questionNumber].nativeLang[0]); 
+    setAnswers(module.questions[questionNumber].nativeLang); // there can be more than one answer
     let sentenceArray = sentence.split(' ');  
     setShuffledWords(shuffleWords(sentenceArray));
-  }, [module, questionNumber, sentence]); 
+  }, [module, questionNumber, setAnswers, sentence]); 
   
   // user chooses words to create an answer
   const choose = (e) => {
@@ -72,7 +74,8 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
     <ModulePracticeAnswerResult 
       questionNumber={ questionNumber } 
       attempt={ answerArray.join(" ") } 
-      answer={ sentence } 
+      answer={ sentence /* shown to the user if their answer is incorrect */} 
+      answers={ answers /* list of all possible answers */} 
     /> 
     </div>
   );
