@@ -250,6 +250,23 @@ button:focus { outline:0; }
   letter-spacing: 1px;
 }
 
+.quit-practice {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  top: 0;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  color: white;
+  background: rgb(200, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin: 0;
+  border: none;
+}
+
 footer {
   position:absolute;
   padding: 1rem;

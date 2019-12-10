@@ -12,9 +12,21 @@ import ModulePracticeTutorial from './ModulePracticeTutorial';
 // The stage/container for the module practice
 const ModulePractice = () => {
   const { modules } = useContext(PracticeContext);
-  const { activeModule } = useContext(PracticeContext);
+  const { activeModule, setActiveModule } = useContext(PracticeContext);
   const { selectedPractice, setSelectedPractice } = useContext(PracticeContext);
-  const { questionIndex } = useContext(PracticeContext);
+  const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
+  const { setShowModuleMenu } = useContext(PracticeContext);
+  const { setProgressPercent } = useContext(PracticeContext);
+  const { setSelectedPracticeEnd } = useContext(PracticeContext);
+
+  const quitPractice = () => {
+    setShowModuleMenu(true);
+    setQuestionIndex(0); 
+    setSelectedPractice(false);
+    setActiveModule(null);
+    setProgressPercent(0);
+    setSelectedPracticeEnd(false); // needed to reset this too, in case user quits on the last question
+  };
 
   // create the user selected module for practice
   useEffect(() => {
@@ -31,6 +43,7 @@ const ModulePractice = () => {
   // output the user selected module
   return (
     <div className="module-practice-container">
+      <button className="quit-practice" onClick={ quitPractice }>X</button>
       {
         selectedPractice ? 
           <React.Fragment>
