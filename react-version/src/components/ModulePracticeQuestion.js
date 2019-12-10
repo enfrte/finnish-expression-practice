@@ -4,12 +4,13 @@ import React from 'react';
 const ModulePracticeQuestion = ( {module, questionNumber} ) => {
 
   //console.log('ModulePracticeQuestion', questionNumber.questionIndex);
-  
+  let question = module.questions[questionNumber].foreignLang[0];
+  question = question.charAt(0).toUpperCase() + question.slice(1); // uppercase first letter
 
   return (
     <div className="module-practice-question">
       {/* questionNumber.questionIndex increments and next question is selected from questions index */}
-      <h3>Q: {module.questions[questionNumber].foreignLang[0]}</h3>
+      <h3>{question}</h3>
     </div>
   );
 }

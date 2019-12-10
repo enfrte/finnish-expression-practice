@@ -52,8 +52,9 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
         { 
           answerArray.map((word, i) => 
             <button className="word-button" id={'word_'+i} onClick={remove} key={i}>
-              { word }
-            </button>) 
+              { i === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word }{/* capitalise the first letter of sentence */}
+            </button>
+          ) 
         }
       </p>
     </div>

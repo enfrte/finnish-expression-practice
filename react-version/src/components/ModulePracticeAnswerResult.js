@@ -8,11 +8,18 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
   const { setShowModuleFinished } = useContext(PracticeContext);
   const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
   const { selectedPractice, selectedPracticeEnd } = useContext(PracticeContext);
-  const { progressPercent, setProgressPercent } = useContext(PracticeContext);
+  const { setProgressPercent } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
   const [resultAnswer, setResultAnswer] = useState('');
+
+  // this may need to change in future depending on whether user might be typing answers. 
+  // See also localeCompare(), but I was having issues with that with Finnish öä characters 
+  const checkAnwserText = (answer, attempt) => {
+    // takes care of any calpitalisation false negatives entered in the database
+    return answer.toUpperCase() === attempt.toUpperCase() ? true : false;
+  };
 
   // create the user selected module for practice
   useEffect(() => {
@@ -40,20 +47,18 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
     // if checkAnswer is true, user has already answers and received feedback. progress to next question 
     setQuestionIndex(questionNumber + 1);
   }
-  
+
   useEffect(() => {
     // when check answer button has been pressed, its state changes to false until the continue button is pressed
     if (checkAnswer === true) {
       // display the result of the answer
-      if (answer === attempt) {
+      if (checkAnwserText(answer, attempt)) {
         setResultMessage('Correct');
         setResultAnswer('');
+        return;
       } 
-      else {
-        setResultMessage('Incorrect');
-        setResultAnswer(answer);
-      }
-      return;
+      setResultMessage('Incorrect');
+      setResultAnswer(answer);
     }
   }, [checkAnswer, answer, attempt]);
 
@@ -70,18 +75,18 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
   else {
     return (
       <div className="module-practice-answer-result-area">
-        <div style={ answer === attempt ? { backgroundColor: 'rgb(99, 217, 104)', color: 'rgb(48, 113, 51)' } : { backgroundColor: 'rgb(255, 160, 176)', color: 'rgb(196, 0, 33)' } } className="module-practice-answer-result">
+        <div style={ checkAnwserText(answer, attempt) ? { backgroundColor: 'rgb(99, 217, 104)', color: 'rgb(48, 113, 51)' } : { backgroundColor: 'rgb(255, 160, 176)', color: 'rgb(196, 0, 33)' } } className="module-practice-answer-result">
 
           <button 
-            style={ answer === attempt ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } } 
+            style={ checkAnwserText(answer, attempt) ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } }
             className="answer-button"
             onClick={ progress }>CONTINUE
           </button>
 
           <div className="result-info-container">
             <div className="result-info">
-              <h3 style={ answer === attempt ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h3>
-              <p>{ answer === attempt ? '' : <strong>Answer: </strong> } { resultAnswer }</p>
+              <h3 style={ checkAnwserText(answer, attempt) ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h3>
+              <p>{ checkAnwserText(answer, attempt) ? '' : <strong>Answer: </strong> } { resultAnswer.charAt(0).toUpperCase() + resultAnswer.slice(1) }</p>
             </div>
           </div>
 

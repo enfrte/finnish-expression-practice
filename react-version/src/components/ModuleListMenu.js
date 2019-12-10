@@ -8,7 +8,7 @@ const ModuleListMenu = ( ) => {
   const { showModuleMenu, setShowModuleMenu } = useContext(PracticeContext);
 
   useEffect(() => {
-    console.log('ModuleListMenu showModuleMenu', showModuleMenu);
+    //console.log('ModuleListMenu showModuleMenu', showModuleMenu);
   }, [showModuleMenu, setShowModuleMenu]);
 
   return modules.length ? (

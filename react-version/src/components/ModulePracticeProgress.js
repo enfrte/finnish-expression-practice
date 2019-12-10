@@ -8,9 +8,8 @@ const ModulePracticeProgress = ( { questionNumber } ) => {
 
   return (
     <div className="module-practice-progress">
-      <p>Question: { questionNumber + 1 }</p>
+      {/*<p>Question: { questionNumber + 1 }</p>*/}
       <div className="question-progressbar" style={{width: progressPercent + '%'}}></div>
-
     </div>
   );
 }

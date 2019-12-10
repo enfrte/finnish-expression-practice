@@ -42,7 +42,7 @@ const PracticeContextProvider = (props) => {
   }, [activeModule]);
 
   useEffect(() => {
-    console.log('PracticeContextProvider selectedPractice:', selectedPractice);
+    //console.log('PracticeContextProvider selectedPractice:', selectedPractice);
     //console.log('Context questionIndex:', questionIndex);
 
     if (selectedPractice === undefined || selectedPractice === false) {

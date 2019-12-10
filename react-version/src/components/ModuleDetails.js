@@ -13,7 +13,7 @@ const { showModuleMenu, setShowModuleMenu } = useContext(PracticeContext);
   }
 
   useEffect(() => {
-    console.log('ModuleDetails showModuleMenu', showModuleMenu);
+    //console.log('ModuleDetails showModuleMenu', showModuleMenu);
   }, [showModuleMenu, setShowModuleMenu]);
 
   return (

@@ -34,10 +34,10 @@ const ModuleFinished = () => {
   }
 
   return (
-    <div className={`module-finished-container ${showModuleFinished ? 'display-block' : 'hidden'}`}>
+    <div className={ showModuleFinished ? 'module-finished-container' : 'hidden' }>
       <h3>You have completed { selectedPractice.title }</h3>
       <p>Show some stats here...</p>
-      <button onClick={closeModule}>BACK TO EXERCISES</button>
+      <button className="answer-button answer-button-continue" onClick={closeModule}>BACK TO EXERCISES</button>
     </div>
   );
 }
