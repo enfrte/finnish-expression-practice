@@ -30,7 +30,6 @@ const ModulePractice = () => {
   // output the user selected module
   return (
     <div className="module-practice-container">
-    {/*selectedPractice ? <p>{selectedPractice.title}</p> : <h3>Please select a module from the menu.</h3>*/}
       {
         selectedPractice ? 
           <React.Fragment>
@@ -39,7 +38,7 @@ const ModulePractice = () => {
             <ModulePracticeAnswerArea module={ selectedPractice } questionNumber={ questionIndex } /> 
           </React.Fragment>
         : 
-          <h3>Please select a module from the menu.</h3>
+          <h3>The menu should appear here!</h3>
       }
     </div>
   );

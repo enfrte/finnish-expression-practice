@@ -1,24 +1,44 @@
-html {
+html, body, #root, .app {
   height: 100%;
-  box-sizing: border-box;
 }
 
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 2rem;
-  min-height: 100%;
   font-family: 'Varela Round', sans-serif;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+.app {
+  position: relative;
+}
+
+.module-list-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
 }
 
 .display-block {
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
 }
 
 .hidden {
@@ -41,6 +61,10 @@ button {
 .module-practice-container {
   margin: auto;
   max-width: 600px;
+}
+
+.module-practice-link-container {
+  padding: 20px 10px;
 }
 
 h3, h4 { 
@@ -179,17 +203,4 @@ footer {
 
 .module-practice-answer-result button {
   width: 100%;
-}
-
-.result-info-container {
-  /*position: relative;*/
-}
-
-.result-info {
-/*  z-index: -1;
-  position: absolute;
-  display: block;
-  width: 100%;
-  padding: 0 10px;
-  */
 }

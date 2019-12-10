@@ -80,7 +80,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, attempt} ) => {
 
           <div className="result-info-container">
             <div className="result-info">
-              <h4 style={ answer === attempt ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h4>
+              <h3 style={ answer === attempt ? { color: 'rgb(48, 113, 51)' } : { color: 'rgb(196, 0, 33)' } }>{ resultMessage }</h3>
               <p>{ answer === attempt ? '' : <strong>Answer: </strong> } { resultAnswer }</p>
             </div>
           </div>

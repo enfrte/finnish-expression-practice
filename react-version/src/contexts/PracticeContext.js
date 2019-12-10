@@ -14,11 +14,10 @@ const PracticeContextProvider = (props) => {
   const [selectedPractice, setSelectedPractice] = useState(); // module data selected by the user to practice
   const [questionIndex, setQuestionIndex] = useState(0); // the current question in the module practice
   const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); // indicates the practice has finished (when the user reaches the last question in the practice)
-  const [showModuleFinished, setShowModuleFinished] = useState(false);
+  const [showModuleFinished, setShowModuleFinished] = useState(false); // show / hide the module modal
+  const [showModuleMenu, setShowModuleMenu] = useState(true); // show / hide the module menu 
   const [progressPercent, setProgressPercent] = useState(0);
 
-  
-  // activeModule = whatever the user selected from the menu. default = null
 
   // The useEffect hook replaces lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   // Use useEffect when reaching outside of the component to do something (a side effect).
@@ -28,9 +27,6 @@ const PracticeContextProvider = (props) => {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        console.log('Raw:', json);
-        //console.log('jsonArray',jsonArray);
-
         setModules(json); // Set state here in your fetch callback
       } 
       catch (error) {
@@ -42,14 +38,14 @@ const PracticeContextProvider = (props) => {
 
   useEffect(() => {
     // should fire when a module is selected 
-    console.log('activeModule:', activeModule);
+    //console.log('activeModule:', activeModule);
   }, [activeModule]);
 
   useEffect(() => {
-    //console.log('selectedPractice:', selectedPractice);
+    console.log('PracticeContextProvider selectedPractice:', selectedPractice);
     //console.log('Context questionIndex:', questionIndex);
 
-    if (selectedPractice === undefined) {
+    if (selectedPractice === undefined || selectedPractice === false) {
       return;
     }
     // check for last question of practice
@@ -67,7 +63,8 @@ const PracticeContextProvider = (props) => {
       questionIndex, setQuestionIndex,
       selectedPracticeEnd, setSelectedPracticeEnd,
       showModuleFinished, setShowModuleFinished,
-      progressPercent, setProgressPercent
+      progressPercent, setProgressPercent,
+      showModuleMenu, setShowModuleMenu
     }}>
       { props.children }
     </PracticeContext.Provider>

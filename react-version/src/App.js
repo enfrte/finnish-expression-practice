@@ -6,7 +6,7 @@ import ModulePractice from './components/ModulePractice';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <PracticeContextProvider>
         <ModuleList />{/* A menu of practice modules */}
         <ModulePractice />{/* The area to practice */}

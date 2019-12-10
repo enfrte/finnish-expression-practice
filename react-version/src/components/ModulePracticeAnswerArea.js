@@ -40,8 +40,8 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
 
   useEffect(() => {
     // for debugging 
-    console.log('shuffledWords useEffect:', shuffledWords);
-    console.log('answerArray useEffect:', answerArray);
+    //console.log('shuffledWords useEffect:', shuffledWords);
+    //console.log('answerArray useEffect:', answerArray);
   }, [shuffledWords, answerArray]);
 
   return (
