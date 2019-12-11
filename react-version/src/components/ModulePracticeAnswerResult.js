@@ -17,13 +17,11 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt} 
   // this may need to change in future depending on whether user might be typing answers. 
   // See also localeCompare(), but I was having issues with that with Finnish öä characters 
   const checkAnwserText = (answers, attempt) => {
-    console.log('answers',answers);
-    console.log('attempt',attempt);
-    
+    //console.log('answers',answers);
+    //console.log('attempt',attempt);
     const correctAnswer = answers.some((answer) => { // The some() method checks if some array values pass a test
       return answer.toUpperCase() === attempt.toUpperCase()     
     });
-
     return correctAnswer; 
     // takes care of any calpitalisation false negatives entered in the database
     //return answer.toUpperCase() === attempt.toUpperCase() ? true : false;
