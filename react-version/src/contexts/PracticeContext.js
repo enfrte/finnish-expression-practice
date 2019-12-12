@@ -19,6 +19,7 @@ const PracticeContextProvider = (props) => {
   const [showModuleMenu, setShowModuleMenu] = useState(true); // show / hide the module menu 
   const [progressPercent, setProgressPercent] = useState(0);
   const [showPracticeTutorial, setShowPracticeTutorial] = useState(false);
+  const [languageSwitch, setLanguageSwitch] = useState(false); // by default the question language is FInnish and the answer language is English (nativeLang). If the user changes this setting, the languages are switched.  
 
   // The useEffect hook replaces lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   // Use useEffect when reaching outside of the component to do something (a side effect).
@@ -37,10 +38,9 @@ const PracticeContextProvider = (props) => {
     getModules();
   }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
 
-  useEffect(() => {
-    // should fire when a module is selected 
-    //console.log('activeModule:', activeModule);
-  }, [activeModule]);
+  /*useEffect(() => { 
+    console.log('languageSwitch:', languageSwitch);
+  }, [languageSwitch]);*/
 
   useEffect(() => {
     //console.log('PracticeContextProvider selectedPractice:', selectedPractice);
@@ -66,7 +66,8 @@ const PracticeContextProvider = (props) => {
       showModuleFinished, setShowModuleFinished,
       progressPercent, setProgressPercent,
       showModuleMenu, setShowModuleMenu,
-      showPracticeTutorial, setShowPracticeTutorial
+      showPracticeTutorial, setShowPracticeTutorial,
+      languageSwitch, setLanguageSwitch
     }}>
       { props.children }
     </PracticeContext.Provider>

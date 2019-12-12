@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { PracticeContext } from '../contexts/PracticeContext';
 import ModulePracticeAnswerResult from './ModulePracticeAnswerResult';
 
 // 
 const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
+  const { languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
+
   const [shuffledWords, setShuffledWords] = useState([]);
   const [answerArray, setAnswerArray] = useState([]);
   const [sentence, setSentence] = useState(''); // the current nativeLang sentence shown to the user
@@ -18,11 +21,14 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
 
   useEffect(() => {
     setAnswerArray([]); // disgard the previous question's answer
-    setSentence(module.questions[questionNumber].nativeLang[0]); 
-    setAnswers(module.questions[questionNumber].nativeLang); // there can be more than one answer
+    const sentenceLanguage = languageSwitch ? module.questions[questionNumber].foreignLang[0] : module.questions[questionNumber].nativeLang[0];
+    const answersLanguage = languageSwitch ? module.questions[questionNumber].foreignLang : module.questions[questionNumber].nativeLang;
+
+    setSentence(sentenceLanguage); 
+    setAnswers(answersLanguage); // there can be more than one answer
     let sentenceArray = sentence.split(' ');  
     setShuffledWords(shuffleWords(sentenceArray));
-  }, [module, questionNumber, setAnswers, sentence]); 
+  }, [module, questionNumber, setAnswers, sentence, languageSwitch]); 
   
   // user chooses words to create an answer
   const choose = (e) => {
