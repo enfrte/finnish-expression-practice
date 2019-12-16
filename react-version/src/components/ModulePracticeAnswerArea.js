@@ -4,7 +4,7 @@ import ModulePracticeAnswerResult from './ModulePracticeAnswerResult';
 
 // 
 const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
-  const { languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
+  const { languageSwitch } = useContext(PracticeContext);
 
   const [shuffledWords, setShuffledWords] = useState([]);
   const [answerArray, setAnswerArray] = useState([]);
