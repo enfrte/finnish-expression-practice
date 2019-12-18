@@ -36,7 +36,7 @@ async function fetchData() {
   return json.rows[0].value;
 }
 
-var serverData = {} 
+var serverData = {};
 
 // words the user chooses from the staged area to make a sentence 
 async function stagedWords() {
@@ -175,7 +175,7 @@ async function init(){
   // gameover popup
   Vue.component('modal', {
     template: '#modal-template'
-  })
+  });
 
 }
 

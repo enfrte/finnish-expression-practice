@@ -1,0 +1,127 @@
+to do...
+- lowercase first word of sentence
+- uppercase letter "I" or "I'm"
+- remove all questionmarks if any
+
+Example...
+
+{
+	"inProduction": true,
+	"_id": "5de6647978e18605844b28e3",
+	"slug": "verb-chaining",
+	"title": "Verb chaining",
+	"tutorial": "Verb chains or verb chaining is when there are two or more verbs in one sentence. When this occurs, only the first verb in the sentence is conjugated in the personal form. The other verbs are in the infinitive form. The exception to this rule is with the verbs täytyy and pitää.",
+	"lang": "Finnish",
+	"questions": [
+		{
+			"nativeLang": [
+				"do you know how to code well?"
+			],
+			"foreignLang": [
+				"osaatko koodata hyvin?"
+			],
+			"_id": "5de6647978e18605844b28e6"
+		}
+	],
+	"__v": 2
+}
+
+Questions...
+
+{ "nativeLang": ["do you know how to code well?"], "foreignLang": ["osaatko koodata hyvin?"] },
+
+{ "nativeLang": ["can you help me create a web site?", "are you able to help me create a web site?" ], "foreignLang": ["voitko auttaa minua luomaan verkkosivuston?" ] },
+
+{ "nativeLang": ["I would like to know how to speak Finnish better", "I would like to know how to speak better Finnish"], "foreignLang": ["haluaisin osata puhua suomea paremmin"] },
+
+{ "foreignLang": ["en ehtinyt vielä tehdä läksyjä"], "nativeLang": ["I don't have time to do homework"] },
+
+{ "foreignLang": ["uskallatko mennä sinne yksin?"], "nativeLang": ["do you dare to go there alone?"] },
+
+{ "foreignLang": ["muista soittaa hänelle"], "nativeLang": ["remember to call him/her"] },
+
+{ "foreignLang": ["aiomme matkustaa lomalla Italiaan"], "nativeLang": ["I plan to travel on holiday to Italy", "I intend to travel on holiday to Italy", "I plan to travel to Italy on holiday", "I intend to travel to Italy on holiday"] },
+
+{ "foreignLang": ["yritän loytää sen jostakin"], "nativeLang": ["I will try to find it from somewhere"] },
+
+{ "foreignLang": ["kannattaa yrittää kysyä sitä"], "nativeLang": ["it is worth to try to ask that", "it is worth trying to ask that"] },
+
+{ "foreignLang": ["saat ottaa tuosta kahvia tai teetä"], "nativeLang": ["you can take coffee or tea"] },
+
+{ "foreignLang": ["ensi viikolla alamme opiskella verbiketjuja"], "nativeLang": ["next week we get to study verb chaining"] },
+
+{ "foreignLang": ["tahdon vaihtaa työpaikkaa"], "nativeLang": ["I intend to change job"] },
+
+{ "foreignLang": ["jaksatko lähteä lenkille illalla?"], "nativeLang": ["do you feel like walking/jogging in the evening?"] },
+
+{ "foreignLang": ["päätimme siirtää kokouksen ensi viikkoon"], "nativeLang": ["we decided to reschedule everything next week"] },
+
+{ "foreignLang": ["viitsitko tulla tänne hetkeksi?"], "nativeLang": ["could you come here for a minute?"] },
+
+{ "foreignLang": ["mihin te haluatte mennä?"], "nativeLang": ["where do you want to go?"] },
+
+{ "foreignLang": ["me haluamme menna kotiin"], "nativeLang": ["we want to go home"] },
+
+{ "foreignLang": ["milloin te haluatte aloittaa?"], "nativeLang": ["when do you want to start?"] },
+
+{ "foreignLang": ["me haluamme aloittaa heti"], "nativeLang": ["we want to start straight away", "we want to start at once"] },
+
+{ "foreignLang": ["kenelle yritit soitaa?"], "nativeLang": ["whom are you trying to call?"] },
+
+{ "foreignLang": ["minä yritin soitaa isälle"], "nativeLang": ["I tried to call dad", "I'm trying to call father"] },
+
+{ "foreignLang": ["mitan jaksoit herätä niin aikaisin?"], "nativeLang": ["how did you manage to wake up so early?", "how did you have the energy to wake up so early?"] },
+
+{ "foreignLang": ["minä jaksoin herätä niin aikaisin ihan hyvin"], "nativeLang": ["I manage to wake up just fine"] },
+
+{ "foreignLang": ["mitä ehditte tehdä kotona?"], "nativeLang": ["what do you have time to do at home?"] },
+
+{ "foreignLang": ["me ehdimme laittaa ruokaa"], "nativeLang": ["we have time to make food"] },
+
+{ "foreignLang": ["milloin voit tulla tänne?"], "nativeLang": ["when can you come here?"] },
+
+{ "foreignLang": ["minä voin tulla illalla"], "nativeLang": ["I can come in the evening"] },
+
+{ "foreignLang": ["miksi et voi tulla tännään kurssille?"], "nativeLang": ["why can't you come on the course today?"] },
+
+{ "foreignLang": ["minä en voi tulla koska olen sairas"], "nativeLang": ["I can't come because I am sick"] },
+
+{ "foreignLang": ["osaatko pelata shakkia?"], "nativeLang": ["do you know how to play chess?"] },
+
+{ "foreignLang": ["minä en osaa pelata shakkia"], "nativeLang": ["I don't know how to play chess"] },
+
+{ "foreignLang": ["mitä päätit ostaa hänelle?"], "nativeLang": ["what did you decide to buy her?"] },
+
+{ "foreignLang": ["minä päätin ostaa kukkia"], "nativeLang": ["I decided to buy her flowers"] },
+
+{ "foreignLang": ["uskalsitko pyytää häntä ulos?"], "nativeLang": ["did you dare to ask her out?"] },
+
+{ "foreignLang": ["minä uskalsin pyytää häntä ulos"], "nativeLang": ["I did dare to ask her out"] },
+
+{ "foreignLang": ["muistiko viedä kirjeen postiin?"], "nativeLang": ["did you remember to put the letter in the postbox?"] },
+
+{ "foreignLang": ["minä muistin viedä kirjeen postiin"], "nativeLang": ["I remembered to put the letter in the post box"] },
+
+{ "foreignLang": ["mitä unohdit ottaa mukaan?"], "nativeLang": ["what did you forget to take?"] },
+
+{ "foreignLang": ["minä unohdin ottaa bussikortin mukaan"], "nativeLang": ["I forgot to take my busspass"] },
+
+{ "foreignLang": ["milloin ilma alkaa lämmetä?"], "nativeLang": ["when does the weather start to get warm?"] },
+
+{ "foreignLang": ["ilma alkaa lämmetä toukokuussa"], "nativeLang": ["the weather starts to get warm in April"] },
+
+{ "foreignLang": ["mitä sinun pitää hakea postista?"], "nativeLang": ["what do you need to get from the postoffice?"] },
+
+{ "foreignLang": ["minun pitää hakea paketti postista"], "nativeLang": ["I need to get a packet from the postoffice"] },
+
+{ "foreignLang": ["mitä teidän pitää tehdä illalla?"], "nativeLang": ["what do you need to do in the evening?"] },
+
+{ "foreignLang": ["minun pitää tehda läksyt ilalla"], "nativeLang": ["I need to do the homework in the evening"] },
+
+{ "foreignLang": ["mitä sinä täytyy ostaa?"], "nativeLang": ["what do you need to buy?"] },
+
+{ "foreignLang": ["minun täytyy ostaa maitoa"], "nativeLang": ["I need to buy milk"] },
+
+{ "foreignLang": ["mitä sinun ei tarvitse tehdä?"], "nativeLang": ["what don't you need to do?"] },
+
+{ "foreignLang": ["minun ei tarvitse tehdä ruokaa"], "nativeLang": ["I don't need to make food"] }
