@@ -10,6 +10,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
   const [answerArray, setAnswerArray] = useState([]);
   const [sentence, setSentence] = useState(''); // the current nativeLang sentence shown to the user
   const [answers, setAnswers] = useState(''); // all possible answers (the answer can be phrased differently and have same meaning)
+  const [isQuestion, setIsQuestion] = useState(false); // check if the question is a question(?) and not a statement
   
   let shuffleWords = (array) => {
     array.forEach((value, index) => {
@@ -21,8 +22,14 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
 
   useEffect(() => {
     setAnswerArray([]); // disgard the previous question's answer
-    const sentenceLanguage = languageSwitch ? module.questions[questionNumber].foreignLang[0] : module.questions[questionNumber].nativeLang[0];
+    let sentenceLanguage = languageSwitch ? module.questions[questionNumber].foreignLang[0] : module.questions[questionNumber].nativeLang[0];
     const answersLanguage = languageSwitch ? module.questions[questionNumber].foreignLang : module.questions[questionNumber].nativeLang;
+    // check for question mark
+    if(sentenceLanguage.match(/\?/g)) {
+      sentenceLanguage = sentenceLanguage.replace('?','');
+      setIsQuestion(true);
+    }
+    else { setIsQuestion(false); }
 
     setSentence(sentenceLanguage); 
     setAnswers(answersLanguage); // there can be more than one answer
@@ -64,6 +71,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
             </button>
           ) 
         }
+        { (answerArray.length > 0) && (isQuestion === true) ? <button className="word-button" style={{backgroundColor:'snow'}}>?</button> : '' } 
       </p>
     </div>
     <div id="optionsArea" className="text-area options-area">
@@ -82,6 +90,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
       attempt={ answerArray.join(" ") } 
       answer={ sentence /* shown to the user if their answer is incorrect */} 
       answers={ answers /* list of all possible answers */} 
+      isQuestion={ isQuestion }
     /> 
     </div>
   );
