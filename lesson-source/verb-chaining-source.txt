@@ -1,8 +1,3 @@
-to do...
-- lowercase first word of sentence
-- uppercase letter "I" or "I'm"
-- remove all questionmarks if any
-
 Example...
 
 {
@@ -28,100 +23,248 @@ Example...
 
 Questions...
 
-{ "nativeLang": ["do you know how to code well?"], "foreignLang": ["osaatko koodata hyvin?"] },
+[{
+		"nativeLang": ["Do you know how to code well?"],
+		"foreignLang": ["Osaatko koodata hyvin?"]
+	},
 
-{ "nativeLang": ["can you help me create a web site?", "are you able to help me create a web site?" ], "foreignLang": ["voitko auttaa minua luomaan verkkosivuston?" ] },
+	{
+		"nativeLang": ["Can you help me create a web site?", "Are you able to help me create a web site?"],
+		"foreignLang": ["Voitko auttaa minua luomaan verkkosivuston?"]
+	},
 
-{ "nativeLang": ["I would like to know how to speak Finnish better", "I would like to know how to speak better Finnish"], "foreignLang": ["haluaisin osata puhua suomea paremmin"] },
+	{
+		"nativeLang": ["I would like to know how to speak Finnish better", "I would like to know how to speak better Finnish"],
+		"foreignLang": ["Haluaisin osata puhua suomea paremmin"]
+	},
 
-{ "foreignLang": ["en ehtinyt vielä tehdä läksyjä"], "nativeLang": ["I don't have time to do homework"] },
+	{
+		"foreignLang": ["En ehtinyt vielä tehdä läksyjä"],
+		"nativeLang": ["I don't have time to do homework"]
+	},
 
-{ "foreignLang": ["uskallatko mennä sinne yksin?"], "nativeLang": ["do you dare to go there alone?"] },
+	{
+		"foreignLang": ["Uskallatko mennä sinne yksin?"],
+		"nativeLang": ["Do you dare to go there alone?"]
+	},
 
-{ "foreignLang": ["muista soittaa hänelle"], "nativeLang": ["remember to call him/her"] },
+	{
+		"foreignLang": ["Muista soittaa hänelle"],
+		"nativeLang": ["Remember to call him/her"]
+	},
 
-{ "foreignLang": ["aiomme matkustaa lomalla Italiaan"], "nativeLang": ["I plan to travel on holiday to Italy", "I intend to travel on holiday to Italy", "I plan to travel to Italy on holiday", "I intend to travel to Italy on holiday"] },
+	{
+		"foreignLang": ["Aiomme matkustaa lomalla Italiaan"],
+		"nativeLang": ["I plan to travel on holiday to Italy", "I intend to travel on holiday to Italy", "I plan to travel to Italy on holiday", "I intend to travel to Italy on holiday"]
+	},
 
-{ "foreignLang": ["yritän loytää sen jostakin"], "nativeLang": ["I will try to find it from somewhere"] },
+	{
+		"foreignLang": ["Yritän loytää sen jostakin"],
+		"nativeLang": ["I will try to find it from somewhere"]
+	},
 
-{ "foreignLang": ["kannattaa yrittää kysyä sitä"], "nativeLang": ["it is worth to try to ask that", "it is worth trying to ask that"] },
+	{
+		"foreignLang": ["Kannattaa yrittää kysyä sitä"],
+		"nativeLang": ["It is worth to try to ask that", "It is worth trying to ask that"]
+	},
 
-{ "foreignLang": ["saat ottaa tuosta kahvia tai teetä"], "nativeLang": ["you can take coffee or tea"] },
+	{
+		"foreignLang": ["Saat ottaa tuosta kahvia tai teetä"],
+		"nativeLang": ["You can take coffee or tea"]
+	},
 
-{ "foreignLang": ["ensi viikolla alamme opiskella verbiketjuja"], "nativeLang": ["next week we get to study verb chaining"] },
+	{
+		"foreignLang": ["Ensi viikolla alamme opiskella verbiketjuja"],
+		"nativeLang": ["Next week we get to study verb chaining"]
+	},
 
-{ "foreignLang": ["tahdon vaihtaa työpaikkaa"], "nativeLang": ["I intend to change job"] },
+	{
+		"foreignLang": ["Tahdon vaihtaa työpaikkaa"],
+		"nativeLang": ["I intend to change job"]
+	},
 
-{ "foreignLang": ["jaksatko lähteä lenkille illalla?"], "nativeLang": ["do you feel like walking/jogging in the evening?"] },
+	{
+		"foreignLang": ["Jaksatko lähteä lenkille illalla?"],
+		"nativeLang": ["Do you feel like walking/jogging in the evening?"]
+	},
 
-{ "foreignLang": ["päätimme siirtää kokouksen ensi viikkoon"], "nativeLang": ["we decided to reschedule everything next week"] },
+	{
+		"foreignLang": ["Päätimme siirtää kokouksen ensi viikkoon"],
+		"nativeLang": ["We decided to reschedule everything next week"]
+	},
 
-{ "foreignLang": ["viitsitko tulla tänne hetkeksi?"], "nativeLang": ["could you come here for a minute?"] },
+	{
+		"foreignLang": ["Viitsitko tulla tänne hetkeksi?"],
+		"nativeLang": ["Could you come here for a minute?"]
+	},
 
-{ "foreignLang": ["mihin te haluatte mennä?"], "nativeLang": ["where do you want to go?"] },
+	{
+		"foreignLang": ["Mihin te haluatte mennä?"],
+		"nativeLang": ["Where do you want to go?"]
+	},
 
-{ "foreignLang": ["me haluamme menna kotiin"], "nativeLang": ["we want to go home"] },
+	{
+		"foreignLang": ["Me haluamme menna kotiin"],
+		"nativeLang": ["We want to go home"]
+	},
 
-{ "foreignLang": ["milloin te haluatte aloittaa?"], "nativeLang": ["when do you want to start?"] },
+	{
+		"foreignLang": ["Milloin te haluatte aloittaa?"],
+		"nativeLang": ["When do you want to start?"]
+	},
 
-{ "foreignLang": ["me haluamme aloittaa heti"], "nativeLang": ["we want to start straight away", "we want to start at once"] },
+	{
+		"foreignLang": ["Me haluamme aloittaa heti"],
+		"nativeLang": ["We want to start straight away", "We want to start at once"]
+	},
 
-{ "foreignLang": ["kenelle yritit soitaa?"], "nativeLang": ["whom are you trying to call?"] },
+	{
+		"foreignLang": ["Kenelle yritit soitaa?"],
+		"nativeLang": ["Whom are you trying to call?"]
+	},
 
-{ "foreignLang": ["minä yritin soitaa isälle"], "nativeLang": ["I tried to call dad", "I'm trying to call father"] },
+	{
+		"foreignLang": ["Minä yritin soitaa isälle"],
+		"nativeLang": ["I tried to call dad", "I'm trying to call father"]
+	},
 
-{ "foreignLang": ["mitan jaksoit herätä niin aikaisin?"], "nativeLang": ["how did you manage to wake up so early?", "how did you have the energy to wake up so early?"] },
+	{
+		"foreignLang": ["Mitan jaksoit herätä niin aikaisin?"],
+		"nativeLang": ["How did you manage to wake up so early?", "How did you have the energy to wake up so early?"]
+	},
 
-{ "foreignLang": ["minä jaksoin herätä niin aikaisin ihan hyvin"], "nativeLang": ["I manage to wake up just fine"] },
+	{
+		"foreignLang": ["Minä jaksoin herätä niin aikaisin ihan hyvin"],
+		"nativeLang": ["I manage to wake up just fine"]
+	},
 
-{ "foreignLang": ["mitä ehditte tehdä kotona?"], "nativeLang": ["what do you have time to do at home?"] },
+	{
+		"foreignLang": ["Mitä ehditte tehdä kotona?"],
+		"nativeLang": ["What do you have time to do at home?"]
+	},
 
-{ "foreignLang": ["me ehdimme laittaa ruokaa"], "nativeLang": ["we have time to make food"] },
+	{
+		"foreignLang": ["Me ehdimme laittaa ruokaa"],
+		"nativeLang": ["We have time to make food"]
+	},
 
-{ "foreignLang": ["milloin voit tulla tänne?"], "nativeLang": ["when can you come here?"] },
+	{
+		"foreignLang": ["Milloin voit tulla tänne?"],
+		"nativeLang": ["When can you come here?"]
+	},
 
-{ "foreignLang": ["minä voin tulla illalla"], "nativeLang": ["I can come in the evening"] },
+	{
+		"foreignLang": ["Minä voin tulla illalla"],
+		"nativeLang": ["I can come in the evening"]
+	},
 
-{ "foreignLang": ["miksi et voi tulla tännään kurssille?"], "nativeLang": ["why can't you come on the course today?"] },
+	{
+		"foreignLang": ["Miksi et voi tulla tännään kurssille?"],
+		"nativeLang": ["Why can't you come on the course today?"]
+	},
 
-{ "foreignLang": ["minä en voi tulla koska olen sairas"], "nativeLang": ["I can't come because I am sick"] },
+	{
+		"foreignLang": ["Minä en voi tulla koska olen sairas"],
+		"nativeLang": ["I can't come because I am sick"]
+	},
 
-{ "foreignLang": ["osaatko pelata shakkia?"], "nativeLang": ["do you know how to play chess?"] },
+	{
+		"foreignLang": ["Osaatko pelata shakkia?"],
+		"nativeLang": ["Do you know how to play chess?"]
+	},
 
-{ "foreignLang": ["minä en osaa pelata shakkia"], "nativeLang": ["I don't know how to play chess"] },
+	{
+		"foreignLang": ["Minä en osaa pelata shakkia"],
+		"nativeLang": ["I don't know how to play chess"]
+	},
 
-{ "foreignLang": ["mitä päätit ostaa hänelle?"], "nativeLang": ["what did you decide to buy her?"] },
+	{
+		"foreignLang": ["Mitä päätit ostaa hänelle?"],
+		"nativeLang": ["What did you decide to buy her?"]
+	},
 
-{ "foreignLang": ["minä päätin ostaa kukkia"], "nativeLang": ["I decided to buy her flowers"] },
+	{
+		"foreignLang": ["Minä päätin ostaa kukkia"],
+		"nativeLang": ["I decided to buy her flowers"]
+	},
 
-{ "foreignLang": ["uskalsitko pyytää häntä ulos?"], "nativeLang": ["did you dare to ask her out?"] },
+	{
+		"foreignLang": ["Uskalsitko pyytää häntä ulos?"],
+		"nativeLang": ["Did you dare to ask her out?"]
+	},
 
-{ "foreignLang": ["minä uskalsin pyytää häntä ulos"], "nativeLang": ["I did dare to ask her out"] },
+	{
+		"foreignLang": ["Minä uskalsin pyytää häntä ulos"],
+		"nativeLang": ["I did dare to ask her out"]
+	},
 
-{ "foreignLang": ["muistiko viedä kirjeen postiin?"], "nativeLang": ["did you remember to put the letter in the postbox?"] },
+	{
+		"foreignLang": ["Muistiko viedä kirjeen postiin?"],
+		"nativeLang": ["Did you remember to put the letter in the postbox?"]
+	},
 
-{ "foreignLang": ["minä muistin viedä kirjeen postiin"], "nativeLang": ["I remembered to put the letter in the post box"] },
+	{
+		"foreignLang": ["Minä muistin viedä kirjeen postiin"],
+		"nativeLang": ["I remembered to put the letter in the post box"]
+	},
 
-{ "foreignLang": ["mitä unohdit ottaa mukaan?"], "nativeLang": ["what did you forget to take?"] },
+	{
+		"foreignLang": ["Mitä unohdit ottaa mukaan?"],
+		"nativeLang": ["What did you forget to take?"]
+	},
 
-{ "foreignLang": ["minä unohdin ottaa bussikortin mukaan"], "nativeLang": ["I forgot to take my busspass"] },
+	{
+		"foreignLang": ["Minä unohdin ottaa bussikortin mukaan"],
+		"nativeLang": ["I forgot to take my busspass"]
+	},
 
-{ "foreignLang": ["milloin ilma alkaa lämmetä?"], "nativeLang": ["when does the weather start to get warm?"] },
+	{
+		"foreignLang": ["Milloin ilma alkaa lämmetä?"],
+		"nativeLang": ["When does the weather start to get warm?"]
+	},
 
-{ "foreignLang": ["ilma alkaa lämmetä toukokuussa"], "nativeLang": ["the weather starts to get warm in April"] },
+	{
+		"foreignLang": ["Ilma alkaa lämmetä toukokuussa"],
+		"nativeLang": ["The weather starts to get warm in April"]
+	},
 
-{ "foreignLang": ["mitä sinun pitää hakea postista?"], "nativeLang": ["what do you need to get from the postoffice?"] },
+	{
+		"foreignLang": ["Mitä sinun pitää hakea postista?"],
+		"nativeLang": ["What do you need to get from the postoffice?"]
+	},
 
-{ "foreignLang": ["minun pitää hakea paketti postista"], "nativeLang": ["I need to get a packet from the postoffice"] },
+	{
+		"foreignLang": ["Minun pitää hakea paketti postista"],
+		"nativeLang": ["I need to get a packet from the postoffice"]
+	},
 
-{ "foreignLang": ["mitä teidän pitää tehdä illalla?"], "nativeLang": ["what do you need to do in the evening?"] },
+	{
+		"foreignLang": ["Mitä teidän pitää tehdä illalla?"],
+		"nativeLang": ["What do you need to do in the evening?"]
+	},
 
-{ "foreignLang": ["minun pitää tehda läksyt ilalla"], "nativeLang": ["I need to do the homework in the evening"] },
+	{
+		"foreignLang": ["Minun pitää tehda läksyt ilalla"],
+		"nativeLang": ["I need to do the homework in the evening"]
+	},
 
-{ "foreignLang": ["mitä sinä täytyy ostaa?"], "nativeLang": ["what do you need to buy?"] },
+	{
+		"foreignLang": ["Mitä sinä täytyy ostaa?"],
+		"nativeLang": ["What do you need to buy?"]
+	},
 
-{ "foreignLang": ["minun täytyy ostaa maitoa"], "nativeLang": ["I need to buy milk"] },
+	{
+		"foreignLang": ["Minun täytyy ostaa maitoa"],
+		"nativeLang": ["I need to buy milk"]
+	},
 
-{ "foreignLang": ["mitä sinun ei tarvitse tehdä?"], "nativeLang": ["what don't you need to do?"] },
+	{
+		"foreignLang": ["Mitä sinun ei tarvitse tehdä?"],
+		"nativeLang": ["What don't you need to do?"]
+	},
 
-{ "foreignLang": ["minun ei tarvitse tehdä ruokaa"], "nativeLang": ["I don't need to make food"] }
+	{
+		"foreignLang": ["Minun ei tarvitse tehdä ruokaa"],
+		"nativeLang": ["I don't need to make food"]
+	}
+]

@@ -24,7 +24,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
     setAnswerArray([]); // disgard the previous question's answer
     let sentenceLanguage = languageSwitch ? module.questions[questionNumber].foreignLang[0] : module.questions[questionNumber].nativeLang[0];
     const answersLanguage = languageSwitch ? module.questions[questionNumber].foreignLang : module.questions[questionNumber].nativeLang;
-    // check for question mark
+    // We want the question mark to disappear from the answers area. Check for question mark, and remove if found
     if(sentenceLanguage.match(/\?/g)) {
       sentenceLanguage = sentenceLanguage.replace('?','');
       setIsQuestion(true);
@@ -55,8 +55,8 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
 
   useEffect(() => {
     // for debugging 
-    //console.log('shuffledWords useEffect:', shuffledWords);
-    //console.log('answerArray useEffect:', answerArray);
+    console.log('shuffledWords useEffect:', shuffledWords);
+    console.log('answerArray useEffect:', answerArray);
   }, [shuffledWords, answerArray]);
 
   return (
@@ -67,11 +67,12 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
         { 
           answerArray.map((word, i) => 
             <button className="word-button" id={'word_'+i} onClick={remove} key={i}>
-              { i === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word }{/* capitalise the first letter of sentence */}
+              { /* i === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word */} {/* capitalise the first letter of sentence */}
+              { (isQuestion === true) && (i === answerArray.length - 1) ? word = word.concat('?') : word  } {/* if a question, concat last word with ? */}
             </button>
           ) 
         }
-        { (answerArray.length > 0) && (isQuestion === true) ? <button className="word-button" style={{backgroundColor:'snow'}}>?</button> : '' } 
+        { /*(answerArray.length > 0) && (isQuestion === true) ? <button className="word-button" style={{backgroundColor:'snow'}}>?</button> : '' */} 
       </p>
     </div>
     <div id="optionsArea" className="text-area options-area">
@@ -80,7 +81,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
         { 
           shuffledWords.map((word, i) => 
             <button className="word-button" style={{backgroundColor:'snow'}} id={'word_'+i} onClick={choose} key={i}>
-              { word }
+              { (isQuestion === true) && (word.match(/\?/) === null) ? word : word = word.replace('?', '') }
             </button>) 
         }
       </p>

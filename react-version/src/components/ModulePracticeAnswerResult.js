@@ -20,7 +20,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     //console.log('answers',answers);
     //console.log('attempt',attempt);
     if (isQuestion === true) { attempt = attempt.concat('?') }
-    const correctAnswer = answers.some((answer) => { // The some() method checks if some array values pass a test
+      const correctAnswer = answers.some((answer) => { // The some() method checks if some array values pass a test
       return answer.toUpperCase() === attempt.toUpperCase()     
     });
     return correctAnswer; 
@@ -63,7 +63,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
       if (checkAnwserText(answers, attempt, isQuestion)) {
         setResultMessage('Correct');
         return;
-      } 
+      }
       setResultMessage('Incorrect');
     }
   }, [checkAnswer, answer, answers, attempt, isQuestion]);
