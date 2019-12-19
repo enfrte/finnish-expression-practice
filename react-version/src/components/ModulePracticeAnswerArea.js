@@ -53,11 +53,11 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
     setShuffledWords([...shuffledWords, e.target.innerText]);
   }
 
-  useEffect(() => {
+  /*useEffect(() => {
     // for debugging 
     console.log('shuffledWords useEffect:', shuffledWords);
     console.log('answerArray useEffect:', answerArray);
-  }, [shuffledWords, answerArray]);
+  }, [shuffledWords, answerArray]);*/
 
   return (
     <div className="module-practice-answer-area">

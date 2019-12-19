@@ -4,7 +4,7 @@ export const PracticeContext = createContext(); // new context - no default valu
 
 const PracticeContextProvider = (props) => {
   // const url = 'http://localhost:5984/react-test/_design/test/_view/test'; // couchDB
-  const url = 'js/practice-data.json?v=20191216'; // in public/js/ - a hard copy of data for production  
+  const url = 'js/practice-data.json?v=20191219'; // in public/js/ - a hard copy of data for production  
   //const url = 'http://localhost:5000/practice'; // base route used with MongoDB and express in /backend folder 
 
   // Hooks useState return [value, function] via array destructuring.

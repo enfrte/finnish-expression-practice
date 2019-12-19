@@ -70,12 +70,12 @@ Questions...
 
 	{
 		"foreignLang": ["Saat ottaa tuosta kahvia tai teetä"],
-		"nativeLang": ["You can take coffee or tea"]
+		"nativeLang": ["You can take coffee or tea from there", "You can take from there coffee or tea"]
 	},
 
 	{
 		"foreignLang": ["Ensi viikolla alamme opiskella verbiketjuja"],
-		"nativeLang": ["Next week we get to study verb chaining"]
+		"nativeLang": ["Next week we start to study verb chaining", "Next week we get to study verb chaining"]
 	},
 
 	{
@@ -135,7 +135,7 @@ Questions...
 
 	{
 		"foreignLang": ["Minä jaksoin herätä niin aikaisin ihan hyvin"],
-		"nativeLang": ["I manage to wake up just fine"]
+		"nativeLang": ["I managed to wake up just fine"]
 	},
 
 	{
@@ -244,8 +244,8 @@ Questions...
 	},
 
 	{
-		"foreignLang": ["Minun pitää tehda läksyt ilalla"],
-		"nativeLang": ["I need to do the homework in the evening"]
+		"foreignLang": ["Minun pitää tehda läksyt illalla"],
+		"nativeLang": ["I need to do the homework in the evening", "I need to do homework in the evening"]
 	},
 
 	{
