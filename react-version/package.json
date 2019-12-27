@@ -2,12 +2,13 @@
   "name": "react-version",
   "version": "0.1.1",
   "private": true,
-  "homepage": "http://codinginthecold.byethost5.com/demos/finnish-practice", 
+  "homepage": "http://codinginthecold.byethost5.com/demos/finnish-practice",
   "dependencies": {
     "handlebars": "^4.5.3",
     "npm-check-updates": "^3.2.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-html-parser": "^2.0.2",
     "react-scripts": "3.2.0"
   },
   "scripts": {
