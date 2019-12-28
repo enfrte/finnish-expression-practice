@@ -1,0 +1,133 @@
+## Liking things
+
+Tykätä/Pitää both mean to like. Tykätä is used more in spoken Finnish. 
+
+### With nouns
+
+You can use Tykätä/Pitää to express you like something or someone. Just add -sta/-stä to the end of the noun. 
+
+### With verbs
+
+To express you like doing something, you use either tykätä or pitää. However, the verb ending will differ depending on the which verb you use. 
+
+Just like there are different ways to express liking to do something in English, there are different ways in Finnish. For example, I like to ski and I like skiing, both mean the same thing. In Finnish though, you only use the infinitive verb form with tykätä. So, I like to ski is tykkään hiihtää.  With pitää, you need to add -misesta/-misestä to the verb root. This then translates to verb-ing. So, pidän hiihtämisestä means, I like skiing. 
+
+But there's more! You can also add -sta/-stä, which changes the verb to a noun. For example, Tykkään hiihdosta and Pidään hiihdosta both mean, I like skiing. So in this context, I like skiing can mean you like to watch people doing it (perhaps at a sporting event, not necessarily as a participant), or as a participant. However, it's not as easy as adding -sta/-stä to the verb root. There is some kind of gnarly mutation between the verb root and -sta/-stä, which I can't currently explain. 
+
+Tykkään syödä. I like to eat.
+
+Pidän syömisestä. I like eating. 
+
+Pidän kakkun syömisestä. I like eating cake.
+
+Tykkään syödä kakkua. I like to eat cake. 
+
+Tykkään koodata. I like to code. 
+
+Pidän koodaamisesta. I like coding.
+
+Pidän web-ohjelmien koodaamisesta. I like coding web applications.
+
+Tykkään koodata web-ohjelmia. I like to code web applications.
+
+Tykkään juosta. I like to run.
+
+Pidän juoksemisesta. I like running. 
+
+Pidän juoksemisesta metsässä. I like running in the forest. 
+
+Tykkään juosta metsässä. I like to run in the forest. 
+
+Tykkään pyöräillä. I like to ride a bike.
+
+Pidän pyöräilemisestä. I like riding a bike.
+
+Tykkään pyöräilystä. I like cycling.
+
+Pidän pyöräilystä. I like cycling. 
+
+Tykkään jälkiruoasta. I like desert. 
+
+Pidän koirista. I like dogs. 
+
+Tykkään Mikosta. I like Mikko. 
+
+Pidän hänestä. I like him/her.
+
+Tykkään heistä. I like them. 
+
+Pidän pyöristä. I like bicyles. 
+
+En tykkää kissoista. I don't like cat's. 
+
+En pidä kalasta. I don't like fish.
+
+En tykkää kalasta. I don't like fish.
+
+En pidä kalastamisesta. I don't like fishing. 
+
+En tykkää kalastaa. I don't like fishing. 
+
+En pidä ostamisesta. I don't like shopping.
+
+En tykkää ostaa. I don't like to shop. 
+
+
+
+{"foreignLang": ["Tykkään syödä"], "nativeLang": ["I like to eat"]},
+
+{"foreignLang": ["Pidän syömisestä"], "nativeLang": ["I like eating"]},
+
+{"foreignLang": ["Pidän kakkun syömisestä"], "nativeLang": ["I like eating cake"]},
+
+{"foreignLang": ["Tykkään syödä kakkua"], "nativeLang": ["I like to eat cake"]},
+
+{"foreignLang": ["Tykkään koodata"], "nativeLang": ["I like to code"]},
+
+{"foreignLang": ["Pidän koodaamisesta"], "nativeLang": ["I like coding"]},
+
+{"foreignLang": ["Pidän web-ohjelmien koodaamisesta"], "nativeLang": ["I like coding web applications"]},
+
+{"foreignLang": ["Tykkään koodata web-ohjelmia"], "nativeLang": ["I like to code web applications"]},
+
+{"foreignLang": ["Tykkään juosta"], "nativeLang": ["I like to run"]},
+
+{"foreignLang": ["Pidän juoksemisesta"], "nativeLang": ["I like running"]},
+
+{"foreignLang": ["Pidän juoksemisesta metsässä"], "nativeLang": ["I like running in the forest"]},
+
+{"foreignLang": ["Tykkään juosta metsässä"], "nativeLang": ["I like to run in the forest"]},
+
+{"foreignLang": ["Tykkään pyöräillä"], "nativeLang": ["I like to ride a bike"]},
+
+{"foreignLang": ["Pidän pyöräilemisestä"], "nativeLang": ["I like riding a bike"]},
+
+{"foreignLang": ["Tykkään pyöräilystä"], "nativeLang": ["I like cycling"]},
+
+{"foreignLang": ["Pidän pyöräilystä"], "nativeLang": ["I like cycling"]},
+
+{"foreignLang": ["Tykkään jälkiruoasta"], "nativeLang": ["I like desert"]},
+
+{"foreignLang": ["Pidän koirista"], "nativeLang": ["I like dogs"]},
+
+{"foreignLang": ["Tykkään Mikosta"], "nativeLang": ["I like Mikko"]},
+
+{"foreignLang": ["Pidän hänestä"], "nativeLang": ["I like him/her"]},
+
+{"foreignLang": ["Tykkään heistä"], "nativeLang": ["I like them"]},
+
+{"foreignLang": ["Pidän pyöristä"], "nativeLang": ["I like bicyles"]},
+
+{"foreignLang": ["En tykkää kissoista"], "nativeLang": ["I don't like cat's"]},
+
+{"foreignLang": ["En pidä kalasta"], "nativeLang": ["I don't like fish"]},
+
+{"foreignLang": ["En tykkää kalasta"], "nativeLang": ["I don't like fish"]},
+
+{"foreignLang": ["En pidä kalastamisesta"], "nativeLang": ["I don't like fishing"]},
+
+{"foreignLang": ["En tykkää kalastaa"], "nativeLang": ["I don't like fishing"]},
+
+{"foreignLang": ["En pidä ostamisesta"], "nativeLang": ["I don't like shopping"]},
+
+{"foreignLang": ["En tykkää ostaa"], "nativeLang": ["I don't like to shop"]},
