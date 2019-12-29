@@ -42,19 +42,21 @@ const ModulePractice = () => {
 
   // output the user selected module
   return (
-    <div className="module-practice-container">
-      <button className="quit-practice" onClick={ quitPractice }>X</button>
-      {
-        selectedPractice ? 
-          <React.Fragment>
-          <ModulePracticeTutorial module={ selectedPractice } /> 
-            <ModulePracticeProgress questionNumber={ questionIndex } /> 
-            <ModulePracticeQuestion module={ selectedPractice } questionNumber={ questionIndex } /> 
-            <ModulePracticeAnswerArea module={ selectedPractice } questionNumber={ questionIndex } /> 
-          </React.Fragment>
-        : 
-          <h3>The menu should appear here!</h3>
-      }
+    <div className="module-practice-screen">
+      <div className="module-practice-container">
+        <button className="quit-practice" onClick={ quitPractice }>X</button>
+        {
+          selectedPractice ? 
+            <React.Fragment>
+            <ModulePracticeTutorial module={ selectedPractice } /> 
+              <ModulePracticeProgress questionNumber={ questionIndex } /> 
+              <ModulePracticeQuestion module={ selectedPractice } questionNumber={ questionIndex } /> 
+              <ModulePracticeAnswerArea module={ selectedPractice } questionNumber={ questionIndex } /> 
+            </React.Fragment>
+          : 
+            <h3>The menu should appear here!</h3>
+        }
+      </div>
     </div>
   );
 
