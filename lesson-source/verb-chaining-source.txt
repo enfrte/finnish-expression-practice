@@ -1,11 +1,9 @@
-Example...
-
 {
 	"inProduction": true,
 	"_id": "5de6647978e18605844b28e3",
 	"slug": "verb-chaining",
 	"title": "Verb chaining",
-	"tutorial": "Verb chains or verb chaining is when there are two or more verbs in one sentence. When this occurs, only the first verb in the sentence is conjugated in the personal form. The other verbs are in the infinitive form. The exception to this rule is with the verbs täytyy and pitää.",
+	"tutorial": "<p>Verb chains or verb chaining is when there are two or more verbs in one sentence. When this occurs, only the first verb in the sentence is conjugated in the personal form. The other verbs are in the infinitive form.</p><p>The exception to this rule is with the verbs täytyy and pitää.</p>",
 	"lang": "Finnish",
 	"questions": [
 		{
@@ -14,16 +12,15 @@ Example...
 			],
 			"foreignLang": [
 				"osaatko koodata hyvin?"
-			],
-			"_id": "5de6647978e18605844b28e6"
+			]
 		}
-	],
-	"__v": 2
+	]
 }
 
 Questions...
 
-[{
+[
+	{
 		"nativeLang": ["Do you know how to code well?"],
 		"foreignLang": ["Osaatko koodata hyvin?"]
 	},
@@ -55,7 +52,7 @@ Questions...
 
 	{
 		"foreignLang": ["Aiomme matkustaa lomalla Italiaan"],
-		"nativeLang": ["I plan to travel on holiday to Italy", "I intend to travel on holiday to Italy", "I plan to travel to Italy on holiday", "I intend to travel to Italy on holiday"]
+		"nativeLang": ["We plan to travel on holiday to Italy", "We intend to travel on holiday to Italy", "We plan to travel to Italy on holiday", "We intend to travel to Italy on holiday"]
 	},
 
 	{

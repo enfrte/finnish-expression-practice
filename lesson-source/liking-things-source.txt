@@ -78,7 +78,7 @@ En tykkää ostaa. I don't like to shop.
 
 {"foreignLang": ["Pidän syömisestä"], "nativeLang": ["I like eating"]},
 
-{"foreignLang": ["Pidän kakkun syömisestä"], "nativeLang": ["I like eating cake"]},
+{"foreignLang": ["Pidän kakun syömisestä"], "nativeLang": ["I like eating cake"]},
 
 {"foreignLang": ["Tykkään syödä kakkua"], "nativeLang": ["I like to eat cake"]},
 
@@ -106,7 +106,7 @@ En tykkää ostaa. I don't like to shop.
 
 {"foreignLang": ["Pidän pyöräilystä"], "nativeLang": ["I like cycling"]},
 
-{"foreignLang": ["Tykkään jälkiruoasta"], "nativeLang": ["I like desert"]},
+{"foreignLang": ["Tykkään jälkiruoasta"], "nativeLang": ["I like dessert"]},
 
 {"foreignLang": ["Pidän koirista"], "nativeLang": ["I like dogs"]},
 
@@ -118,7 +118,7 @@ En tykkää ostaa. I don't like to shop.
 
 {"foreignLang": ["Pidän pyöristä"], "nativeLang": ["I like bicyles"]},
 
-{"foreignLang": ["En tykkää kissoista"], "nativeLang": ["I don't like cat's"]},
+{"foreignLang": ["En tykkää kissoista"], "nativeLang": ["I don't like cats"]},
 
 {"foreignLang": ["En pidä kalasta"], "nativeLang": ["I don't like fish"]},
 
@@ -126,7 +126,7 @@ En tykkää ostaa. I don't like to shop.
 
 {"foreignLang": ["En pidä kalastamisesta"], "nativeLang": ["I don't like fishing"]},
 
-{"foreignLang": ["En tykkää kalastaa"], "nativeLang": ["I don't like fishing"]},
+{"foreignLang": ["En tykkää kalastaa"], "nativeLang": ["I don't like to fish"]},
 
 {"foreignLang": ["En pidä ostamisesta"], "nativeLang": ["I don't like shopping"]},
 

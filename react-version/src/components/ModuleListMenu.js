@@ -33,6 +33,7 @@ const ModuleListMenu = ( ) => {
           return null; // removes warning about map not returning something
         })
       }
+      <p><a href="https://www.reddit.com/r/CodingInTheCold/comments/ebdkgb/finnish_expression_practice/">Submit corrections</a></p>
     </div>
   ) : (
     <h2>No modules found/created!</h2>
