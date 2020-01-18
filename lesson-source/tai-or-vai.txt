@@ -1,0 +1,58 @@
+
+<p>Both <em>tai</em> and <em>vai</em> mean <em>or</em> in English, but they’re used in different contexts. </p><h3>tai is only used in statements</h3><p>If it's not a question, use <em>tai</em> :)</p><h3>tai and vai are both used in questions.</h3><p>A good analogy to learn this is to think of check-boxes and radio buttons.</p><p><strong>Checkboxes example</strong>. Use <em>tai</em>, if the expected answer might not be in the list of options provided, or may be multiple options in the list of options. </p><p><strong>Radio buttons example</strong>. Use <em>vai</em>, if the expected answer is expected to be in the list of options provided, and only be one answer. </p><p>In some questions, these uses can depend on context though. For example, Voisitko vapaa-ehtoinen kaksi tai kolme päivää viikossa? Could you volunteer 2 or 3 days a week? Means, the amount of days are suggested, and you could also do more or less (probably). In the example, Voisitko vapaa-ehtoinen kaksi vai kolme päivää viikossa? It means, you can volunteer either 2 or 3 days a week. Not 1, or more than 3. Perhaps there is some rule in the organisation. </p><h3>Exceptions (kind of)</h3><p>In the following example, </p><p>Miten voi tilata tai peruuttaa tilauksen? How can I subscribe or unsubscribe? </p><p>You use <em>tai</em> because even thought it's a question, these are not strictly options. Actually, we are asking how we do this and that. </p><p>In another, Miksi planeetat ovat pyöreitä? Miksi ne eivät ole kuution, pyramidin tai levyn muotoisia? Why are planets round? Why aren't they shaped like cubes, pyramids, or discs? </p><p>This again is a question not really offering you a list of options to select from. So <em>tai</em> is used. </p>
+
+{"foreignLang": ["Kyllä vai ei?"], "nativeLang": ["Yes or no?"]},
+
+{"foreignLang": ["Totta vai tarua?"], "nativeLang": ["True or false?"]},
+
+{"foreignLang": ["Olet kolmekymmentä, vai?"], "nativeLang": ["You're thirty, right?"]},
+
+{"foreignLang": ["Ostatko vai myytkö?"], "nativeLang": ["Are you buying or are you selling?"]},
+
+{"foreignLang": ["Kokista vai"], "nativeLang": ["Pepsiä?"], "nativeLang": ["Coke or"], "nativeLang": ["Pepsi?"]},
+
+{"foreignLang": ["Tom on kiropraktikko, vai?"], "nativeLang": ["Tom is a chiropractor, isn't he?"]},
+
+{"foreignLang": ["Oletko hullu vai mitä?"], "nativeLang": ["You're crazy or what?"]},
+
+{"foreignLang": ["Pilailetko vai oletko tosissasi?"], "nativeLang": ["Are you joking, or are you serious?"]},
+
+{"foreignLang": ["Kannantatko suunnitelmaa vai et?"], "nativeLang": ["Are you in favor of the plan or not?"]},
+
+{"foreignLang": ["Oletko aikuinen vai lapsi?"], "nativeLang": ["Are you an adult or a child?"]},
+
+{"foreignLang": ["Maksattekö yhdessä vai erikseen?"], "nativeLang": ["Are you paying together or separately?"]},
+
+{"foreignLang": ["Kummasta pidät, valkoviinistä vai punaviinistä?"], "nativeLang": ["Do you prefer white wine or red wine?"]},
+
+{"foreignLang": ["Haluaisitteko teetä tai kahvia?"], "nativeLang": ["Would you like some tea or some coffee?"]},
+
+{"foreignLang": ["Haluatko kahvia tai jotain?"], "nativeLang": ["Do you want some coffee or something?"]},
+
+{"foreignLang": ["Käytätkö sokeria tai maitoa?"], "nativeLang": ["Do you take sugar or milk?"]},
+
+{"foreignLang": ["Onko sinulla veljiä tai siskoja?"], "nativeLang": ["Do you have any brothers or sisters?"]},
+
+{"foreignLang": ["Käytä tai heitä."], "nativeLang": ["Use it or lose it."]},
+
+{"foreignLang": ["Nyt tai ei koskaan."], "nativeLang": ["It's now or never."]},
+
+{"foreignLang": ["Pidä kiirettä tai myöhästyt. "], "nativeLang": ["Hurry up, or you will be late."]},
+
+{"foreignLang": ["Kiirehdi, tai myöhästyt junasta."], "nativeLang": ["Hurry up, or you will miss the train."]},
+
+{"foreignLang": ["Ennemmin tai myöhemmin pahoja rangaistaan."], "nativeLang": ["Sooner or later the wicked are punished."]},
+
+{"foreignLang": ["Kuvia tai sitä ei tapahtunut."], "nativeLang": ["Pics or it didn't happen."]},
+
+{"foreignLang": ["Puhukoon nyt, tai vaietkoon iäksi."], "nativeLang": ["Speak now, or forever be silent."]},
+
+{"foreignLang": ["Anna minulle päivä tai pari."], "nativeLang": ["Give me a day or two."]},
+
+{"foreignLang": ["Tapahtuma järjestetään, satoi tai paistoi."], "nativeLang": ["The event takes place rain or shine."]},
+
+{"foreignLang": ["Ole varovainen tai joudut vaikeuksiin."], "nativeLang": ["Watch your step or you'll get into trouble."]},
+
+{"foreignLang": ["Älä kiroile, tai pesen suusi saippualla."], "nativeLang": ["Don't curse or"], "nativeLang": ["I'll wash your mouth out with soap."]},
+
+{"foreignLang": ["Halusit tai et, sinun on mentävä."], "nativeLang": ["Whether you like it or not, you have to go."]}

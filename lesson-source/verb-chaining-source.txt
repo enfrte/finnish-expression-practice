@@ -246,7 +246,7 @@ Questions...
 	},
 
 	{
-		"foreignLang": ["Mitä sinä täytyy ostaa?"],
+		"foreignLang": ["Mitä sinun täytyy ostaa?"],
 		"nativeLang": ["What do you need to buy?"]
 	},
 
