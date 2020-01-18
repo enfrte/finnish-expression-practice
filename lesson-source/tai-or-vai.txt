@@ -9,11 +9,11 @@
 
 {"foreignLang": ["Ostatko vai myytkö?"], "nativeLang": ["Are you buying or are you selling?"]},
 
-{"foreignLang": ["Kokista vai"], "nativeLang": ["Pepsiä?"], "nativeLang": ["Coke or"], "nativeLang": ["Pepsi?"]},
+{"foreignLang": ["Kokista vai Pepsiä?"], "nativeLang": ["Coke or Pepsi?"]},
 
 {"foreignLang": ["Tom on kiropraktikko, vai?"], "nativeLang": ["Tom is a chiropractor, isn't he?"]},
 
-{"foreignLang": ["Oletko hullu vai mitä?"], "nativeLang": ["You're crazy or what?"]},
+{"foreignLang": ["Oletko hullu vai mitä?"], "nativeLang": ["Are you crazy or what?"]},
 
 {"foreignLang": ["Pilailetko vai oletko tosissasi?"], "nativeLang": ["Are you joking, or are you serious?"]},
 
