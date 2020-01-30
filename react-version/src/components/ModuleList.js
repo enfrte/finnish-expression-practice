@@ -4,11 +4,11 @@ import ModuleListMenu from './ModuleListMenu';
 
 // Module list/menu - Return visible (in production) modules.  
 const ModuleList = () => {
-  const { modules } = useContext(PracticeContext);
+  const { modulesJson } = useContext(PracticeContext);
   //const { selectedPractice } = useContext(PracticeContext);
 
-  return modules.length ? (
-    <ModuleListMenu />
+  return modulesJson.length ? (
+    <ModuleListMenu modules={ modulesJson } />
   ) : (
     <h2>No modules found/created!</h2>
   );

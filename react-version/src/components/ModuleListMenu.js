@@ -3,11 +3,13 @@ import { PracticeContext } from '../contexts/PracticeContext';
 import ModuleDetails from './ModuleDetails';
 
 // Module list/menu - Return visible (in production) modules.  
-const ModuleListMenu = ( ) => {
-  const { modules } = useContext(PracticeContext);
-  const { showModuleMenu } = useContext(PracticeContext);
-  const { languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
-
+const ModuleListMenu = ( {modules} ) => {
+  //const { modules } = useContext(PracticeContext);
+  //const { modulesJson } = useContext(PracticeContext);
+  //const { questionsJson } = useContext(PracticeContext);
+  //const { showModuleMenu } = useContext(PracticeContext);
+  const {  showModuleMenu, languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
+  
   /*useEffect(() => {
     //console.log('ModuleListMenu showModuleMenu', showModuleMenu);    
   }, [showModuleMenu, setShowModuleMenu]);*/
@@ -21,16 +23,13 @@ const ModuleListMenu = ( ) => {
           <button className={languageSwitch ? '' : 'answer-button-continue'} onClick={()=>{setLanguageSwitch(false)} }>Finnish</button>
         </div>
       </div>
-      <h3>Select a practice module</h3>
+      <h3>Select a practice module</h3>      
       {
         modules.map(module => {
-          if (module.inProduction === true) {
-            return (
-              // pass module data to ModuleDetails component
-              <ModuleDetails module={ module } key={ module._id }></ModuleDetails>
-            )
-          }
-          return null; // removes warning about map not returning something
+          return (
+            // pass module data to ModuleDetails component
+            <ModuleDetails module={ module } key={ module._id }></ModuleDetails>
+          )
         })
       }
       <p><a href="https://www.reddit.com/r/CodingInTheCold/comments/ebdkgb/finnish_expression_practice/">Submit corrections</a></p>
