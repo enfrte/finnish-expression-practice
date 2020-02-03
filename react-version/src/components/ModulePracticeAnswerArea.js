@@ -3,8 +3,8 @@ import { PracticeContext } from '../contexts/PracticeContext';
 import ModulePracticeAnswerResult from './ModulePracticeAnswerResult';
 
 // 
-const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
-  const { languageSwitch } = useContext(PracticeContext);
+const ModulePracticeAnswerArea = ( {moduleId, questionNumber} ) => {
+  const { questionsJson, languageSwitch } = useContext(PracticeContext);
 
   const [shuffledWords, setShuffledWords] = useState([]);
   const [answerArray, setAnswerArray] = useState([]);
@@ -22,8 +22,8 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
 
   useEffect(() => {
     setAnswerArray([]); // disgard the previous question's answer
-    let sentenceLanguage = languageSwitch ? module.questions[questionNumber].foreignLang[0] : module.questions[questionNumber].nativeLang[0];
-    const answersLanguage = languageSwitch ? module.questions[questionNumber].foreignLang : module.questions[questionNumber].nativeLang;
+    let sentenceLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].foreignLang[0] : questionsJson[moduleId][questionNumber].nativeLang[0];
+    const answersLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].foreignLang : questionsJson[moduleId][questionNumber].nativeLang;
     // We want the question mark to disappear from the answers area. Check for question mark, and remove if found
     if(sentenceLanguage.match(/\?/g)) {
       sentenceLanguage = sentenceLanguage.replace('?','');
@@ -35,7 +35,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
     setAnswers(answersLanguage); // there can be more than one answer
     let sentenceArray = sentence.split(' ');  
     setShuffledWords(shuffleWords(sentenceArray));
-  }, [module, questionNumber, setAnswers, sentence, languageSwitch]); 
+  }, [moduleId, questionNumber, setAnswers, sentence, languageSwitch, questionsJson]); 
   
   // user chooses words to create an answer
   const choose = (e) => {
@@ -62,22 +62,18 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
   return (
     <div className="module-practice-answer-area">
       <div id="answerArea" className="text-area">
-      <p>
-        {/* the user's answer goes here */}
+      <p>{/* the user's answer goes here */}
         { 
           answerArray.map((word, i) => 
             <button className="word-button" id={'word_'+i} onClick={remove} key={i}>
-              { /* i === 0 ? word.charAt(0).toUpperCase() + word.slice(1) : word */} {/* capitalise the first letter of sentence */}
               { (isQuestion === true) && (i === answerArray.length - 1) ? word = word.concat('?') : word  } {/* if a question, concat last word with ? */}
             </button>
           ) 
         }
-        { /*(answerArray.length > 0) && (isQuestion === true) ? <button className="word-button" style={{backgroundColor:'snow'}}>?</button> : '' */} 
       </p>
     </div>
     <div id="optionsArea" className="text-area options-area">
-      <p>
-        {/* the question choices goes here */}
+      <p>{/* the question choices goes here */}
         { 
           shuffledWords.map((word, i) => 
             <button className="word-button" style={{backgroundColor:'snow'}} id={'word_'+i} onClick={choose} key={i}>
@@ -87,6 +83,7 @@ const ModulePracticeAnswerArea = ( {module, questionNumber} ) => {
       </p>
     </div>
     <ModulePracticeAnswerResult 
+      totalQuestions={questionsJson[moduleId].length}
       questionNumber={ questionNumber } 
       attempt={ answerArray.join(" ") } 
       answer={ sentence /* shown to the user if their answer is incorrect */} 

@@ -67,7 +67,9 @@ const PracticeContextProvider = (props) => {
     getDbData(tutorialsUrl);    
   }, []);
 
-  console.log('proacticeContext', modulesJson);
+  //console.log('modulesJson', modulesJson);
+  //console.log('tutorialsJson', tutorialsJson);
+  //console.log('questionsJson', questionsJson);
   
   /*useEffect(() => { 
     console.log('languageSwitch:', languageSwitch);

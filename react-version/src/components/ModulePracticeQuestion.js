@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
 
 // Displays the question to the user
-const ModulePracticeQuestion = ( {module, questionNumber} ) => {
+const ModulePracticeQuestion = ( {moduleId, questionNumber} ) => {
 
-  const { languageSwitch } = useContext(PracticeContext);
+  const { questionsJson, languageSwitch } = useContext(PracticeContext);
 
   //console.log('ModulePracticeQuestion', questionNumber.questionIndex);
 
-  let question = languageSwitch ? module.questions[questionNumber].nativeLang[0] : module.questions[questionNumber].foreignLang[0];
+  let question = languageSwitch ? questionsJson[moduleId][questionNumber].nativeLang[0] : questionsJson[moduleId][questionNumber].foreignLang[0];
   question = question.charAt(0).toUpperCase() + question.slice(1); // uppercase first letter
 
   return (

@@ -1,9 +1,8 @@
 import React, { useContext }  from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
 
-// 
+// Shows the progress of the practice as a progress bar
 const ModulePracticeProgress = ( { questionNumber } ) => {
-
   const { progressPercent } = useContext(PracticeContext);
 
   return (

@@ -5,19 +5,12 @@ import ModulePracticeQuestion from './ModulePracticeQuestion';
 import ModulePracticeProgress from './ModulePracticeProgress';
 import ModulePracticeTutorial from './ModulePracticeTutorial';
 
-// have access to the modules
-// have access to user selected module item
-// if selected module item, populate the stage and answer area with the module questions 
-
 // The stage/container for the module practice
-const ModulePractice = () => {
-  const { modules } = useContext(PracticeContext);
-  const { activeModule, setActiveModule } = useContext(PracticeContext);
-  const { selectedPractice, setSelectedPractice } = useContext(PracticeContext);
-  const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
-  const { setShowModuleMenu } = useContext(PracticeContext);
-  const { setProgressPercent } = useContext(PracticeContext);
-  const { setSelectedPracticeEnd } = useContext(PracticeContext);
+const ModulePractice = ( {moduleId} ) => {
+  //const { modules } = useContext(PracticeContext);
+  const { 
+    modulesJson, activeModule, setActiveModule, selectedPractice, setSelectedPractice, questionIndex, setQuestionIndex, setShowModuleMenu, setProgressPercent, setSelectedPracticeEnd 
+  } = useContext(PracticeContext);
 
   const quitPractice = () => {
     setShowModuleMenu(true);
@@ -30,15 +23,12 @@ const ModulePractice = () => {
 
   // create the user selected module for practice
   useEffect(() => {
-    if (activeModule !== null) {
-      modules.map(module => {
-        if (activeModule === module._id) {
-          setSelectedPractice(module);
-        }
-        return null; //This is to remove warning because 'map' needs a return value
-      });
+    //console.log('moduleId',moduleId);
+    if (moduleId !== null) {
+      //setSelectedPractice(moduleId);
+      //console.log('>>>', selectedPractice);
     }
-  }, [setSelectedPractice, activeModule, modules]);
+  }, [setSelectedPractice, activeModule, modulesJson, moduleId, selectedPractice]);
 
   // output the user selected module
   return (
@@ -46,12 +36,12 @@ const ModulePractice = () => {
       <div className="module-practice-container">
         <button className="quit-practice" onClick={ quitPractice }>X</button>
         {
-          selectedPractice ? 
+          moduleId ? 
             <React.Fragment>
-            <ModulePracticeTutorial module={ selectedPractice } /> 
+              <ModulePracticeTutorial moduleId={ moduleId } /> 
               <ModulePracticeProgress questionNumber={ questionIndex } /> 
-              <ModulePracticeQuestion module={ selectedPractice } questionNumber={ questionIndex } /> 
-              <ModulePracticeAnswerArea module={ selectedPractice } questionNumber={ questionIndex } /> 
+              <ModulePracticeQuestion moduleId={ moduleId } questionNumber={ questionIndex } /> 
+              <ModulePracticeAnswerArea moduleId={ moduleId } questionNumber={ questionIndex } /> 
             </React.Fragment>
           : 
             <h3>The menu should appear here!</h3>
