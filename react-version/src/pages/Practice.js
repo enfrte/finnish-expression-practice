@@ -20,7 +20,6 @@ const Practice = () => {
 
 
   return (
-    <Router>
       <div className="module-practice-screen">
         <h1>Practice</h1>
         <div className="module-practice-container">
@@ -40,10 +39,6 @@ const Practice = () => {
           }
         </div>
       </div>
-      <Switch>
-        <Route exact path="/" component={Menu} />
-      </Switch>
-    </Router>
   );
 };
 

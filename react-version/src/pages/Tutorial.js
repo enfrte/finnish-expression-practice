@@ -4,7 +4,7 @@ import {useParams, useLocation } from "react-router";
 
 const Tutorial = () => {
   const location = useLocation();
-  console.log(location);
+  //console.log(location);
   const { id } = useParams(); // !!! set up the links in the module practice 
   return (
     <div>

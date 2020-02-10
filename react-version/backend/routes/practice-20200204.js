@@ -1,8 +1,8 @@
 // Main routes for inputting new data
 const router = require('express').Router();
-let Practice = require('../models/practice.model');
+let Practice = require('../models/practice.model.20200204');
 
-// base endpoint localhost:5000/practice
+// base endpoint localhost:5000/practice-20200204
 
 router.route('/').get((req, res) => {
   Practice.find()
@@ -36,8 +36,6 @@ router.route('/').post((req, res) => {
   const tutorial = req.body.tutorial;
   const lang = req.body.lang;
   const questions = req.body.questions;
-  //const nativeLang = req.body.questions.nativeLang;
-  //const foreignLang = req.body.questions.foreignLang;
   const inProduction = req.body.inProduction;
   console.log('post body', req.body);
 
@@ -61,8 +59,6 @@ router.route('/:id').put((req, res) => {
       json.tutorial = req.body.tutorial;
       json.lang = req.body.lang;
       json.questions = req.body.questions;
-      //json.nativeLang = req.body.questions.nativeLang;
-      //json.foreignLang = req.body.questions.foreignLang;
       json.inProduction = req.body.inProduction;
       json.save()
         .then(json => {
@@ -73,6 +69,5 @@ router.route('/:id').put((req, res) => {
     })
     .catch(err => res.status(400).json(err));
 });
-
 
 module.exports = router;

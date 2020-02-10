@@ -22,7 +22,7 @@ const PracticeContextProvider = (props) => {
   const [languageSwitch, setLanguageSwitch] = useState(false); // by default the question language is FInnish and the answer language is English (nativeLang). If the user changes this setting, the languages are switched.  
 
   // const url = 'http://localhost:5984/react-test/_design/test/_view/test'; // couchDB
-  const url = 'js/practice-data.json?v=20200119'; // in public/js/ - a hard copy of data for production
+  //const url = 'js/practice-data.json?v=20200119'; // in public/js/ - a hard copy of data for production
   //const url = 'http://localhost:5000/practice'; // base route used with MongoDB and express in /backend folder 
   // new endpoints 
   const questionsUrl = 'http://localhost:5000/questions'; 
@@ -47,7 +47,7 @@ const PracticeContextProvider = (props) => {
     //getModules();
   }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
 */
-  useEffect(() => {    
+  useEffect(() => {
     async function getDbData(url) {
       try {
         const response = await fetch(url);

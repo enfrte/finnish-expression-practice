@@ -17,16 +17,16 @@ connection.once('open', () => {
   console.log("MongoDB database connection established successfully.")
 });
 
-const practiceRouter = require('./routes/practice'); // locations of routes file
+const practiceRouter = require('./routes/practice-20200204'); // locations of routes file
 app.use('/practice', practiceRouter); // directs the url path to the routes file
 
-const moduleRouter = require('./routes/modules'); // locations of routes file
+const moduleRouter = require('./routes/modules-20200204'); // locations of routes file
 app.use('/modules', moduleRouter); // directs the url path to the routes file
 
-const questionsRouter = require('./routes/questions'); // locations of routes file
+const questionsRouter = require('./routes/questions-20200204'); // locations of routes file
 app.use('/questions', questionsRouter); // directs the url path to the routes file
 
-const tutorialsRouter = require('./routes/tutorials'); // locations of routes file
+const tutorialsRouter = require('./routes/tutorials-20200204'); // locations of routes file
 app.use('/tutorials', tutorialsRouter); // directs the url path to the routes file
 
 const testRouter = require('./routes/test');
