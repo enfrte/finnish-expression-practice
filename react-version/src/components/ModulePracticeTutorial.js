@@ -1,20 +1,19 @@
 import React, {useContext} from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
+import ReactHtmlParser from 'react-html-parser';
+import {BrowserRouter as Router, Link } from 'react-router-dom';
 
-// Displays the question to the user
 const ModulePracticeTutorial = ( { moduleId } ) => {
-  const { showPracticeTutorial, setShowPracticeTutorial, tutorialsJson } = useContext(PracticeContext); 
+  const { tutorialsJson } = useContext(PracticeContext); 
 
   return (
     <div className="module-practice-tutorial-container">
-      <button className="answer-button tutorial-button" onClick={ () => setShowPracticeTutorial(!showPracticeTutorial) }>Tutorial</button>
-      <div className={ showPracticeTutorial ? 'module-practice-tutorial-screen' : 'hidden' }>
-        <div className="module-practice-tutorial">
-          <h2>{module.title}</h2>
-          <div>{ReactHtmlParser(tutorialsJson[moduleId])}</div>
-          <button className="answer-button answer-button-continue" onClick={ () => setShowPracticeTutorial(!showPracticeTutorial) }>CLOSE TUTORIAL</button>
-        </div>
+      <div className="module-practice-tutorial">
+        <h2>{tutorialsJson[moduleId].title}</h2>
+        <div>{ReactHtmlParser(tutorialsJson[moduleId].tutorial)}</div>
+        <Link to={'/Practice/' + moduleId}>
+          <button className="answer-button answer-button-continue">CLOSE TUTORIAL</button>
+        </Link>
       </div>
     </div>
   );

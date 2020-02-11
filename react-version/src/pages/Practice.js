@@ -1,16 +1,12 @@
 import React, { useContext } from 'react';
-import {BrowserRouter as Router, Route, Switch, Link, useParams, useLocation, useRouteMatch} from 'react-router-dom';
+import {BrowserRouter as Router, Link, useParams} from 'react-router-dom';
 import { PracticeContext } from '../contexts/PracticeContext';
-
-import Menu from './Menu';
 
 import ModulePracticeAnswerArea from '../components/ModulePracticeAnswerArea';
 import ModulePracticeQuestion from '../components/ModulePracticeQuestion';
 import ModulePracticeProgress from '../components/ModulePracticeProgress';
-import ModulePracticeTutorial from '../components/ModulePracticeTutorial';
 
 const Practice = () => {
-  //console.log("Practice component:", location);
   const { moduleId } = useParams();
 
   const { 
@@ -22,9 +18,13 @@ const Practice = () => {
   return (
       <div className="module-practice-screen">
         <h1>Practice</h1>
+
         <div className="module-practice-container">
           <Link to={'/'}>
             <button className="quit-practice">X</button>
+          </Link>
+          <Link to={'/Tutorial/' + moduleId}>
+            <button className="answer-button tutorial-button">Tutorial</button>
           </Link>
           {
             moduleId ? 
@@ -35,9 +35,10 @@ const Practice = () => {
                 <ModulePracticeAnswerArea moduleId={ moduleId } questionNumber={ questionIndex } /> 
               </React.Fragment>
             : 
-              <h3>The menu should appear here!</h3>
+              <h3>No module ID!</h3>
           }
         </div>
+
       </div>
   );
 };

@@ -5,7 +5,7 @@ let Dataset = require('../models/practice.model');
 router.route('/').get((req, res) => {
   const query = { inProduction: true }; // == mysql WHERE 'inProduction' = true
   // projection = the fields to return (remember, this is mongoose syntax)
-  const projection = { tutorial: 1 }; // no need for '_id: 1' as it's automatically returned
+  const projection = { title: 1, tutorial: 1 }; // no need for '_id: 1' as it's automatically returned
   Dataset.find(query, projection)
     .then(json => {
       const idBasedKeyData = convertIdValuesToKeys(json);
@@ -18,7 +18,7 @@ const convertIdValuesToKeys = function (json) {
   const newJsonObj = {};
 
   for (const index of json) {
-    newJsonObj[index._id] = index.tutorial;
+    newJsonObj[index._id] = {title: index.title, tutorial: index.tutorial};
   }
   return newJsonObj;
 };
