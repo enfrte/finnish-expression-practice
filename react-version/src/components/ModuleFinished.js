@@ -3,6 +3,8 @@
 
 import React, { useContext, useEffect } from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+
 
 const ModuleFinished = () => {
   const { selectedPractice } = useContext(PracticeContext);
@@ -23,7 +25,7 @@ const ModuleFinished = () => {
   }, [setShowModuleFinished, showModuleFinished]);
 
   function closeModule() {
-    // close the modal popup / reset the exercises
+    // reset the exercises
     setQuestionIndex(0); 
     setSelectedPractice(false);
     setActiveModule(null);
@@ -34,10 +36,11 @@ const ModuleFinished = () => {
   }
 
   return (
-    <div className={ showModuleFinished ? 'module-finished-container' : 'hidden' }>
-      <h3>You have completed { selectedPractice.title }</h3>
-      <p>Show some stats here...</p>
-      <button className="answer-button answer-button-continue" onClick={closeModule}>BACK TO EXERCISES</button>
+    <div className="module-finished-container">
+      <h3>You have completed the module.</h3>
+      <Link to={'/'}>
+        <button className="answer-button answer-button-continue" onClick={closeModule}>BACK TO EXERCISES</button>
+      </Link>
     </div>
   );
 }

@@ -82,11 +82,11 @@ const PracticeContextProvider = (props) => {
       return;
     }
     // check for last question of practice
-    if (selectedPractice.questions.length === questionIndex + 1) {
+    if (questionsJson.length === questionIndex + 1) {
       setSelectedPracticeEnd(true);
     }
-
-  }, [questionIndex, selectedPractice]);
+    console.log('selectedPracticeEnd:', selectedPracticeEnd);
+  }, [questionIndex, selectedPractice, selectedPracticeEnd]);
 
   return (
     <PracticeContext.Provider value={{ 

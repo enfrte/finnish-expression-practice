@@ -5,10 +5,9 @@ import { PracticeContext } from '../contexts/PracticeContext';
 
 // Enables the user to check their answer, shows the result, and provides an element to proceed to the next question
 const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, isQuestion, totalQuestions} ) => {
-  const { setShowModuleFinished } = useContext(PracticeContext);
-  const { questionIndex, setQuestionIndex } = useContext(PracticeContext);
-  const { selectedPractice, selectedPracticeEnd } = useContext(PracticeContext);
-  const { setProgressPercent } = useContext(PracticeContext);
+  const { 
+    setShowModuleFinished, questionIndex, setQuestionIndex, selectedPractice, selectedPracticeEnd, setSelectedPracticeEnd, setProgressPercent 
+  } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);
   const [resultMessage, setResultMessage] = useState('');
@@ -39,9 +38,6 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     
     if (checkAnswer === false) {
       setCheckAnswer(true);
-      // set the progress percent
-      const percent = ((questionIndex + 1) / totalQuestions) * 100;
-      setProgressPercent(percent);
       return; 
     }
     if (selectedPracticeEnd === true) {
@@ -51,7 +47,11 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
       }
       return;
     }
-    // if checkAnswer is true, user has already answers and received feedback. progress to next question 
+    // checkAnswer is true, user has already answered and received feedback. 
+    // set the progress percent
+    const percent = ((questionIndex + 1) / totalQuestions) * 100;
+    setProgressPercent(percent);
+    // progress to next question 
     setQuestionIndex(questionNumber + 1);
   }
 
