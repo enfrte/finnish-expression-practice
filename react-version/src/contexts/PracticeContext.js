@@ -6,47 +6,25 @@ const PracticeContextProvider = (props) => {
   // Hooks useState return [value, function] via array destructuring.
   // Hooks example - const [count, setCount] = useState(0); // count = 0
   // A hooks function is triggered by events in the form of onClick={() => setCount(prevCount => prevCount + 1)} // or call the function from outside 
-  const [modules, setModules] = useState([]); // container to hold all the practice modules 
   const [questionsJson, setQuestionsJson] = useState([]); 
-  const [modulesJson, setModulesJson] = useState([]); 
+  const [modulesJson, setModulesJson] = useState([]); // modules are the practice lessons
   const [tutorialsJson, setTutorialsJson] = useState([]); 
-  
-  const [activeModule, setActiveModule] = useState(null); // module id of current selected practice module
-  const [selectedPractice, setSelectedPractice] = useState(); // module data selected by the user to practice
   const [questionIndex, setQuestionIndex] = useState(0); // the current question in the module practice
-  const [selectedPracticeEnd, setSelectedPracticeEnd] = useState(false); // indicates the practice has finished (when the user reaches the last question in the practice)
-  const [showModuleFinished, setShowModuleFinished] = useState(false); // show / hide the module modal
-  const [showModuleMenu, setShowModuleMenu] = useState(true); // show / hide the module menu 
-  const [progressPercent, setProgressPercent] = useState(0);
-  const [showPracticeTutorial, setShowPracticeTutorial] = useState(false);
-  const [languageSwitch, setLanguageSwitch] = useState(false); // by default the question language is FInnish and the answer language is English (nativeLang). If the user changes this setting, the languages are switched.  
+  const [progressPercent, setProgressPercent] = useState(0); // also used to trigger the end of the practice
+  const [languageSwitch, setLanguageSwitch] = useState(false); // switch the practice's question language    
 
-  // const url = 'http://localhost:5984/react-test/_design/test/_view/test'; // couchDB
-  //const url = 'js/practice-data.json?v=20200119'; // in public/js/ - a hard copy of data for production
-  //const url = 'http://localhost:5000/practice'; // base route used with MongoDB and express in /backend folder 
-  // new endpoints 
-  const questionsUrl = 'http://localhost:5000/questions'; 
-  const modulesUrl = 'http://localhost:5000/modules'; 
-  const tutorialsUrl = 'http://localhost:5000/tutorials'; 
+  // base routes used with MongoDB and express in /backend folder 
+  //const questionsUrl = 'http://localhost:5000/questions'; 
+  //const modulesUrl = 'http://localhost:5000/modules'; 
+  //const tutorialsUrl = 'http://localhost:5000/tutorials'; 
+  // in public/js/ - a hard copy of data for production
+  const questionsUrl = 'js/questions-data.json?v=20200218'; 
+  const modulesUrl = 'js/modules-data.json?v=20200218'; 
+  const tutorialsUrl = 'js/tutorials-data.json?v=20200218'; 
 
   // The useEffect hook replaces lifecycle methods componentDidMount, componentDidUpdate, componentWillUnmount.
   // Use useEffect when reaching outside of the component to do something (a side effect).
   // useEffect takes a callback function. 
-  /*
-  useEffect(() => {
-    async function getModules() {
-      try {
-        const response = await fetch(url);
-        const json = await response.json();
-        setModules(json); // Set state here in your fetch callback
-      } 
-      catch (error) {
-        console.log('Fetch', error);
-      }
-    }
-    //getModules();
-  }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
-*/
   useEffect(() => {
     async function getDbData(url) {
       try {
@@ -62,44 +40,16 @@ const PracticeContextProvider = (props) => {
         console.log('Fetch', error);
       }
     }
-    getDbData(questionsUrl);
     getDbData(modulesUrl);
+    getDbData(questionsUrl);
     getDbData(tutorialsUrl);    
-  }, []);
-
-  //console.log('modulesJson', modulesJson);
-  //console.log('tutorialsJson', tutorialsJson);
-  //console.log('questionsJson', questionsJson);
-  
-  /*useEffect(() => { 
-    console.log('languageSwitch:', languageSwitch);
-  }, [languageSwitch]);*/
-
-  useEffect(() => {
-    //console.log('PracticeContextProvider selectedPractice:', selectedPractice);
-    //console.log('Context questionIndex:', questionIndex);
-    if (selectedPractice === undefined || selectedPractice === false) {
-      return;
-    }
-    // check for last question of practice
-    if (questionsJson.length === questionIndex + 1) {
-      setSelectedPracticeEnd(true);
-    }
-    console.log('selectedPracticeEnd:', selectedPracticeEnd);
-  }, [questionIndex, selectedPractice, selectedPracticeEnd]);
+  }, []); // [] will make a single request (ie, it won't loop). Put a useState variable inside, and it will run every time that variable state changes
 
   return (
     <PracticeContext.Provider value={{ 
-      //modules, 
       questionsJson, modulesJson, tutorialsJson,
-      activeModule, setActiveModule, 
-      selectedPractice, setSelectedPractice, 
       questionIndex, setQuestionIndex,
-      selectedPracticeEnd, setSelectedPracticeEnd,
-      showModuleFinished, setShowModuleFinished,
       progressPercent, setProgressPercent,
-      showModuleMenu, setShowModuleMenu,
-      showPracticeTutorial, setShowPracticeTutorial,
       languageSwitch, setLanguageSwitch
     }}>
       { props.children }

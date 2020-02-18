@@ -5,7 +5,6 @@ import ModulePracticeAnswerResult from './ModulePracticeAnswerResult';
 // 
 const ModulePracticeAnswerArea = ( {moduleId, questionNumber} ) => {
   const { questionsJson, languageSwitch } = useContext(PracticeContext);
-
   const [shuffledWords, setShuffledWords] = useState([]);
   const [answerArray, setAnswerArray] = useState([]);
   const [sentence, setSentence] = useState(''); // the current nativeLang sentence shown to the user
@@ -22,8 +21,8 @@ const ModulePracticeAnswerArea = ( {moduleId, questionNumber} ) => {
 
   useEffect(() => {
     setAnswerArray([]); // disgard the previous question's answer
-    let sentenceLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].foreignLang[0] : questionsJson[moduleId][questionNumber].nativeLang[0];
-    const answersLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].foreignLang : questionsJson[moduleId][questionNumber].nativeLang;
+    let sentenceLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].fi[0] : questionsJson[moduleId][questionNumber].en[0];
+    const answersLanguage = languageSwitch ? questionsJson[moduleId][questionNumber].fi : questionsJson[moduleId][questionNumber].en;
     // We want the question mark to disappear from the answers area. Check for question mark, and remove if found
     if(sentenceLanguage.match(/\?/g)) {
       sentenceLanguage = sentenceLanguage.replace('?','');

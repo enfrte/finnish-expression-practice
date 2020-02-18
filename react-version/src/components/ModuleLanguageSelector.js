@@ -3,8 +3,7 @@ import { PracticeContext } from '../contexts/PracticeContext';
 
 // Details about the module and link to execute the practice
 const ModuleLanguageSelector = ({ module }) => {
-  const {  showModuleMenu, languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
-
+  const {  languageSwitch, setLanguageSwitch } = useContext(PracticeContext);
 
   return (
     <div className="language-switcher-container">

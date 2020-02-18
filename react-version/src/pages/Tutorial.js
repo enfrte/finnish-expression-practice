@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
 import ReactHtmlParser from 'react-html-parser';
-import {BrowserRouter as Router, Link, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Tutorial = () => {
   const { tutorialsJson } = useContext(PracticeContext); 

@@ -1,12 +1,11 @@
 // the Continue button that also shows the user if they are correct or wrong
 import React, { useEffect, useContext, useState } from 'react';
 import { PracticeContext } from '../contexts/PracticeContext';
-//import ModuleFinished from './ModuleFinished';
 
 // Enables the user to check their answer, shows the result, and provides an element to proceed to the next question
 const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, isQuestion, totalQuestions} ) => {
   const { 
-    setShowModuleFinished, questionIndex, setQuestionIndex, selectedPractice, selectedPracticeEnd, setSelectedPracticeEnd, setProgressPercent 
+    setShowModuleFinished, questionIndex, setQuestionIndex, selectedPracticeEnd, setProgressPercent 
   } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);

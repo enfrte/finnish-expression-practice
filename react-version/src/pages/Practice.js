@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
-import {BrowserRouter as Router, Link, useParams} from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { PracticeContext } from '../contexts/PracticeContext';
-import ModuleFinished from '../components/ModuleFinished';
 
+import ModuleFinished from '../components/ModuleFinished';
 import ModulePracticeAnswerArea from '../components/ModulePracticeAnswerArea';
 import ModulePracticeQuestion from '../components/ModulePracticeQuestion';
 import ModulePracticeProgress from '../components/ModulePracticeProgress';
+import ModulePracticeQuit from '../components/ModulePracticeQuit';
 
 const Practice = () => {
   const { moduleId } = useParams();
@@ -19,12 +20,10 @@ const Practice = () => {
     return ( <ModuleFinished /> );
   } else {
     return (
-        <div className="module-practice-screen">
-          <h1>Practice</h1>
-          
+        <div className="module-practice-screen">          
           <div className="module-practice-container">
             <Link to={'/'}>
-              <button className="quit-practice">X</button>
+              <ModulePracticeQuit />
             </Link>
             <Link to={'/Tutorial/' + moduleId}>
               <button className="answer-button tutorial-button">Tutorial</button>

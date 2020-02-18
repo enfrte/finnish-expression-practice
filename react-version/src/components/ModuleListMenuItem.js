@@ -1,8 +1,7 @@
-import React, { useContext } from 'react';
-import { PracticeContext } from '../contexts/PracticeContext';
+import React from 'react';
 
 // Details about the module and link to execute the practice
-const ModuleDetails = ({ module }) => {
+const ModuleListMenuItem = ({ module }) => {
 
   return (
     <div className="module-practice-link-container">
@@ -13,4 +12,4 @@ const ModuleDetails = ({ module }) => {
   );
 }
 
-export default ModuleDetails;
+export default ModuleListMenuItem;
