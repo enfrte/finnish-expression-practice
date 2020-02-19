@@ -6,8 +6,8 @@ const PracticeContextProvider = (props) => {
   // Hooks useState return [value, function] via array destructuring.
   // Hooks example - const [count, setCount] = useState(0); // count = 0
   // A hooks function is triggered by events in the form of onClick={() => setCount(prevCount => prevCount + 1)} // or call the function from outside 
-  const [questionsJson, setQuestionsJson] = useState([]); 
   const [modulesJson, setModulesJson] = useState([]); // modules are the practice lessons
+  const [questionsJson, setQuestionsJson] = useState([]); 
   const [tutorialsJson, setTutorialsJson] = useState([]); 
   const [questionIndex, setQuestionIndex] = useState(0); // the current question in the module practice
   const [progressPercent, setProgressPercent] = useState(0); // also used to trigger the end of the practice

@@ -5,7 +5,7 @@ import { PracticeContext } from '../contexts/PracticeContext';
 // Enables the user to check their answer, shows the result, and provides an element to proceed to the next question
 const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, isQuestion, totalQuestions} ) => {
   const { 
-    setShowModuleFinished, questionIndex, setQuestionIndex, selectedPracticeEnd, setProgressPercent 
+    questionIndex, setQuestionIndex, setProgressPercent 
   } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);
@@ -26,7 +26,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     //return answer.toUpperCase() === attempt.toUpperCase() ? true : false;
   };
 
-  // create the user selected module for practice
+  // when question index increments, revert state of the next question to unanswered 
   useEffect(() => {
     setCheckAnswer(false); // answer state is reverted when question state is updated
   }, [questionIndex]);
@@ -38,13 +38,6 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     if (checkAnswer === false) {
       setCheckAnswer(true);
       return; 
-    }
-    if (selectedPracticeEnd === true) {
-      // there are no more questions - don't progress any further
-      if (checkAnswer) {
-        setShowModuleFinished(true);
-      }
-      return;
     }
     // checkAnswer is true, user has already answered and received feedback. 
     // set the progress percent
@@ -67,6 +60,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     }
   }, [checkAnswer, answer, answers, attempt, isQuestion]);
 
+  // render CHECK (answer) or CONTINUE button to the user 
   if ( checkAnswer === false ) {
     return (
       <div className="module-practice-answer-check-area">
@@ -85,7 +79,8 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
           <button 
             style={ checkAnwserText(answers, attempt, isQuestion) ? { backgroundColor: 'rgb(48, 113, 51)', color: 'white' } : { backgroundColor: 'rgb(196, 0, 33)', color: 'white' } }
             className="answer-button"
-            onClick={ progress }>CONTINUE
+            onClick={ progress }>
+            CONTINUE
           </button>
 
           <div className="result-info-container">
