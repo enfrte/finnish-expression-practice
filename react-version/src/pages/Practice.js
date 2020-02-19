@@ -25,9 +25,11 @@ const Practice = () => {
             <Link to={'/'}>
               <ModulePracticeQuit />
             </Link>
-            <Link to={'/Tutorial/' + moduleId}>
-              <button className="answer-button tutorial-button">Tutorial</button>
-            </Link>
+            <div className="module-practice-tutorial-container">
+              <Link to={'/Tutorial/' + moduleId}>
+                <button className="answer-button tutorial-button">Tutorial</button>
+              </Link>
+            </div>
             {
               moduleId ? 
                 <React.Fragment>

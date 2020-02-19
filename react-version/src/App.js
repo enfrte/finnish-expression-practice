@@ -1,16 +1,16 @@
 import React from 'react';
 import './App.css';
 import PracticeContextProvider from './contexts/PracticeContext';
-import {HashRouter} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Menu from './pages/Menu';
 
 function App() {
   return (
     <div className="app">      
       <PracticeContextProvider>
-        <HashRouter>
+        <Router>
           <Menu />
-        </HashRouter>
+        </Router>
       </PracticeContextProvider>
     </div>
   );

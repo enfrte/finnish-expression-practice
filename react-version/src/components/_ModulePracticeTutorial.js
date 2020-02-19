@@ -7,7 +7,6 @@ const ModulePracticeTutorial = ( { moduleId } ) => {
   const { tutorialsJson } = useContext(PracticeContext); 
 
   return (
-    <div className="module-practice-tutorial-container">
       <div className="module-practice-tutorial">
         <h2>{tutorialsJson[moduleId].title}</h2>
         <div>{ReactHtmlParser(tutorialsJson[moduleId].tutorial)}</div>
@@ -15,7 +14,6 @@ const ModulePracticeTutorial = ( { moduleId } ) => {
           <button className="answer-button answer-button-continue">CLOSE TUTORIAL</button>
         </Link>
       </div>
-    </div>
   );
 }
 

@@ -12,7 +12,7 @@
       //console.log('modulesJson', modulesJson);
       
       return (
-        <div>
+        <div className="main-container">
           <Router>
             <Switch>
               <Route exact path="/">
@@ -31,7 +31,6 @@
               <Route exact path="/Tutorial/:moduleId" component={Tutorial} />
               </Switch>
           </Router>
-          
         </div>
       );
 
