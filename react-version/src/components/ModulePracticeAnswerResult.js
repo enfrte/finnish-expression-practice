@@ -5,7 +5,7 @@ import { PracticeContext } from '../contexts/PracticeContext';
 // Enables the user to check their answer, shows the result, and provides an element to proceed to the next question
 const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, isQuestion, totalQuestions} ) => {
   const { 
-    questionIndex, setQuestionIndex, setProgressPercent 
+    setQuestionIndex, setProgressPercent 
   } = useContext(PracticeContext);
 
   const [checkAnswer, setCheckAnswer] = useState(false);
@@ -29,7 +29,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
   // when question index increments, revert state of the next question to unanswered 
   useEffect(() => {
     setCheckAnswer(false); // answer state is reverted when question state is updated
-  }, [questionIndex]);
+  }, [questionNumber]);
 
   // navigate to the next question
   function progress(e) {
@@ -41,7 +41,7 @@ const ModulePracticeAnswerResult = ( {questionNumber, answer, answers, attempt, 
     }
     // checkAnswer is true, user has already answered and received feedback. 
     // set the progress percent
-    const percent = ((questionIndex + 1) / totalQuestions) * 100;
+    const percent = ((questionNumber + 1) / totalQuestions) * 100;
     setProgressPercent(percent);
     // progress to next question 
     setQuestionIndex(questionNumber + 1);
