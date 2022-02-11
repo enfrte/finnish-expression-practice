@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://codinginthecold.byethost5.com/demos/finnish-practice",
   "dependencies": {
-    "handlebars": "^4.5.3",
+    "handlebars": "^4.7.7",
     "npm-check-updates": "^3.2.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
